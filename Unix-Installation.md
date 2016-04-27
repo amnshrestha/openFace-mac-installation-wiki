@@ -30,24 +30,33 @@ To acquire all of the dependencies follow the steps:
 
     4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip 
 
-        `wget https://github.com/Itseez/opencv/archive/3.1.0.zip`
+        wget https://github.com/Itseez/opencv/archive/3.1.0.zip
 
-4.3 Unzip it and create a build folder:	
-    sudo unzip 3.1.0.zip
-    cd opencv-3.1.0
-    mkdir build
-    cd build
-4.4 Build it using: 
-	cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_SHARED_LIBS=OFF ..
+    4.3 Unzip it and create a build folder:	
+
+        sudo unzip 3.1.0.zip
+        cd opencv-3.1.0
+        mkdir build
+        cd build
+
+    4.4 Build it using:
+
+        cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_SHARED_LIBS=OFF ..
 	make -j2
-	sudo make install		
+	sudo make install	
+	
 5. Get Boost: 
 
     `sudo apt-get install libboost1.55-all-dev`
 
     alternatively: sudo apt-get install libboost-all-dev
 
-6. Make the actual OpenFace and compile it using
+## Actual model instalation
+
+1. Get OpenFace 
+    git clone 
+OpenFace and compile it using
+
 
 	cd OpenFace
 	cmake -D CMAKE_BUILD_TYPE=RELEASE . 
