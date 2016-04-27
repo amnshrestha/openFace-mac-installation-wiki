@@ -6,18 +6,6 @@ The code was written mainly by Tadas Baltrusaitis during his time at the Languag
 
 More details about the project - http://www.cl.cam.ac.uk/research/rainbow/projects/openface/
 
-## Table of contents
-
-## Windows Instalation
-
-For Windows this software comes prepackaged with all the necessary binaries and dll's for compilation of the project, you still need to compile it in order to run it. You don't need to download anything additional, just open "OpenFace.sln" using Visual Studio 2015 and compile the code. The project was built and tested on Visual Studio 2015 (can't guarantee compatibility with other versions, and you would need to find/build the appropriate dll and lib files for them yourself). Code was tested on Windows 7/8/10 and Windows Server 2008 can't guarantee compatibility with other Windows versions (but in theory it should work). 
-
-NOTE be sure to run the project without debugger attached and in Release mode for speed (if running from Visual Studio). To run without debugger attach use CTRL + F5 instead of F5. To change from Debug mode to Release mode select Release from drop down menu in the toolbar. This can mean the difference between running at 5fps and 60fps on 320x240px videos. I also found that the x64 version seems to run faster on most machines.
-
-## Unix Instalation
-
-For Unix based systems and different compilers, I included Cmake files for cross-platform and cross-IDE support. For running the code on Ubuntu please see readme-ubuntu.txt for detailed instructions of how to get required libraries and build the project.
-
 ## Copyright
 
 Copyright can be found in the Copyright.txt
