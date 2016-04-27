@@ -12,13 +12,15 @@ Copyright can be found in the Copyright.txt
 
 You have to respect boost, TBB, dlib, and OpenCV licenses.
 
+## Installation
+
+[Windows](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Windows-Installation)
+
+[Ubuntu](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Unix-Installation)
+
 ## Use
 
 Explanation of the code layout and the command line arguments can be found in Readme.txt
-
-## Windows Binaries
-
-Coming Soon
 
 ## Citation
 
