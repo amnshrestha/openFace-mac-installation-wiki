@@ -65,9 +65,11 @@ To acquire all of the dependencies follow the steps:
 
 2. Compile it using
 
-    cd OpenFace
-    cmake -D CMAKE_BUILD_TYPE=RELEASE . 
-    make
+    `cd OpenFace`
+
+    `cmake -D CMAKE_BUILD_TYPE=RELEASE . `
+
+    `make`
 
 3. Test it with 
     - for videos:	
