@@ -74,6 +74,20 @@ Additional parameters for output:
 
    `-g` output images should be grayscale (for saving space)
 
+You might not always want to extract all the output features (gaze, Action Units, landmarks, pose, etc.), you can restrict output using the following flags:
+
+   `-no2Dfp` do not output 2D landmarks in pixels
+
+   `-no3Dfp` do not output 3D landmarks in milimeters
+
+   `-noMparams` do not output rigid and non-rigid shape parameters
+
+   `-noPose` do not output head pose (location and rotation)
+
+   `-noAUs` do not output the Facial Action Units
+
+   `-noGaze` do not output eye gaze
+
 ## Common parameters for all
 
     -q specifying to use quiet mode not visualizing output
