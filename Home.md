@@ -6,11 +6,14 @@ The code was written mainly by Tadas Baltrusaitis during his time at the Languag
 
 More details about the project - http://www.cl.cam.ac.uk/research/rainbow/projects/openface/
 
-## Copyright
+## Functionality
 
-Copyright can be found in the Copyright.txt
-
-You have to respect boost, TBB, dlib, and OpenCV licenses.
+- Facial Landmark Detection
+- Facial Landmark Tracking
+- Head Pose Tracking
+- Facial Action Unit Recognition
+- Gaze tracking
+- Facial Feature Extraction
 
 ## Installation
 
@@ -25,15 +28,6 @@ You have to respect boost, TBB, dlib, and OpenCV licenses.
 GUI for Windows (Coming soon)
 
 Messaging server (Coming soon)
-
-## Functionality
-
-- Facial Landmark Detection
-- Facial Landmark Tracking
-- Head Pose Tracking
-- Facial Action Unit Recognition
-- Gaze tracking
-- Facial Feature Extraction
 
 ## Citation
 
@@ -68,3 +62,8 @@ in *Facial Expression Recognition and Analysis Challenge*,
 
 I did my best to make sure that the code runs out of the box but there are always issues and I would be grateful for your understanding that this is research code and not a commercial level product. However, if you encounter any problems/bugs/issues please contact me on github or by emailing me at Tadas.Baltrusaitis@cl.cam.ac.uk for any bug reports/questions/suggestions. 
 
+# Copyright
+
+Copyright can be found in the Copyright.txt
+
+You have to respect boost, TBB, dlib, and OpenCV licenses.
