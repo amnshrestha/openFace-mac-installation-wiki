@@ -4,9 +4,10 @@ Best way to see how the command line arguments work is through looking at `./mat
 
 Parameters for input (if nothing is specified attempts to read from a webcam with default values)
 
-	-f <filename, the video file being input>
-	-device <device_num, the webcam from which to read images (default 0)>
-	-fd <depth directory, the directory where depth files are stored (deprecated)> 
+    -f <filename, the video file being input, can specify multiple files>
+    -device <device_num, the webcam from which to read images (default 0)>
+    -fd <depth directory, the directory where depth files are stored (deprecated)> 
+    -root <the root of input and output directories>
 
 Optional camera parameters for proper head pose visualization
 
@@ -23,9 +24,10 @@ Parameters for output:
 
 Single image analysis:
 
-    -f <filename> - the image file being input
+    -f <filename, can have multiple -f flags> - the image file being input
     -of <location of output landmark points file> 
     -oi <location of tracked video>
+    -root <the root of input and output directories>
 
 Batch image analysis:
 	
