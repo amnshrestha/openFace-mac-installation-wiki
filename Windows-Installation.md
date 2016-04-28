@@ -10,3 +10,18 @@ NOTE be sure to run the project without debugger attached and in Release mode fo
 
 ### Architecture
 The software works both on 32 and 64 bit architectures. I  found that the x64 version seems to run faster on most machines.
+
+### Testing
+
+To test if the system compiled correctly or to test binaries go to `matlab_runners\Demos` and attempt to run all the demo scripts (from Matlab)
+  - `run_demo_videos.m` tracking videos
+  - `run_demo_video_multi.m` multiple faces in videos
+  - `run_demo_images.m` landmark detection in images
+  - `gaze_extraction_demo_vid.m` gaze in videos
+  - `feature_extraction_demo_vid.m` various features (pose, landmarks, gaze, and Action Units from a video)
+
+Alternatively if you don't have matlab try these command line arguments from `Release` directory (add extra `../` if running from `x64/Release/`:
+
+- `FaceLandmarkImg.exe -wild -fdir "../videos/" -ofdir "../matlab_runners/demo_img/" -oidir "../matlab_runners/demo_img/"`
+
+- `FaceTrackingVid.exe -f "../videos/changeLighting.wmv" -f "../videos/0188_03_021_al_pacino.avi" -f "../videos/0217_03_006_alanis_morissette.avi"`
