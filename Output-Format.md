@@ -64,7 +64,17 @@ The header specifies the meaning of each column. The explanation of each:
 
 `X_0, ... X_67, Y_0,...Y_67, Z_0,...Z_67`  location of 3D landmarks in milimeters, the landmark index can be seen above (just subtract 1 to get from a Matlab to a C++ standard). For this to be accurate need to have good estimates for `fx,fy,cx,cy`
 
+**Rigid and non-rigid shape parameters**
 
+Parameters of a point distribution model (PDM) that describe the rigid face shape (location, scale and rotation) and non-rigid face shape (deformation due to expression and identity). For more details look at chapter 4.2 of my [Thesis](https://www.cl.cam.ac.uk/~tb346/pub/thesis/phd_thesis.pdf) for more details.
+
+`p_scale, p_rx, p_ry, p_rz, p_tx, p_ty` - scale, rotation and translation terms of the PDM
+
+`p_0, p_1, ... p_33` - non-rigid shape parameters
+
+**Facial Action Units**
+
+AU01_r, AU02_r, AU04_r, AU05_r, AU06_r, AU09_r, AU10_r, AU12_r, AU14_r, AU15_r, AU17_r, AU20_r, AU25_r, AU26_r, AU04_c, AU12_c, AU15_c, AU23_c, AU28_c, AU45_c
 
 Similarity aligned work
 
