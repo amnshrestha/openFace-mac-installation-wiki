@@ -1,4 +1,4 @@
-# FaceLandmarkVid
+# FaceLandmarkVid and FaceLandmarkVidMulti
 
 Parameters for input (if nothing is specified attempts to read from a webcam with default values)
 
