@@ -8,9 +8,16 @@ More details about the project - http://www.cl.cam.ac.uk/research/rainbow/projec
 
 ## Functionality
 
+The system is capable of performing a number of facial analysis tasks:
+
 - Facial Landmark Detection
 
-- Facial Landmark and head pose tracking (link to YouTube videos)
+![Sample image](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/multi_face_img.png)
+
+- Facial Landmark and head pose tracking (links to YouTube videos)
+
+<a href="https://www.youtube.com/watch?v=V7rV0uy7heQ" target="_blank"><img src="http://img.youtube.com/vi/V7rV0uy7heQ/0.jpg" alt="Multiple Face Tracking" width="240" height="180" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=vYOa8Pif5lY" target="_blank"><img src="http://img.youtube.com/vi/vYOa8Pif5lY/0.jpg" alt="Multiple Face Tracking" width="240" height="180" border="10" /></a>
 
 - Facial Action Unit Recognition (image of it in action)
 
