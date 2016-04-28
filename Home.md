@@ -20,7 +20,18 @@ You have to respect boost, TBB, dlib, and OpenCV licenses.
 
 ## Use
 
-Explanation of the code layout and the command line arguments can be found in Readme.txt
+[Command line](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
+GUI for Windows (Coming soon)
+Messaging server (Coming soon)
+
+## Functionality
+
+- Facial Landmark Detection
+- Facial Landmark Tracking
+- Head Pose Tracking
+- Facial Action Unit Recognition
+- Gaze tracking
+- Facial Feature Extraction
 
 ## Citation
 
