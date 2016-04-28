@@ -29,7 +29,7 @@ The system is capable of performing a number of facial analysis tasks:
 
 - Facial Feature Extraction (aligned faces and HOG features)
 
-![Sample gaze tracking image](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/appearance.png)
+![Sample aligned face and HOG image](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/appearance.png)
 
 
 ## Installation
