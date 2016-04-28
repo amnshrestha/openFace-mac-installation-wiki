@@ -9,13 +9,6 @@ Parameters for input (if nothing is specified attempts to read from a webcam wit
     -fd <depth directory, the directory where depth files are stored (deprecated)> 
     -root <the root of input and output directories>
 
-Optional camera parameters for proper head pose visualization
-
-	-fx <focal length in x>
-	-fy <focal length in y>
-	-cx <optical centre in x> 
-	-cy <optical centre in y>
-
 Parameters for output:
 
     -ov <location of visualized track>
@@ -58,3 +51,10 @@ Model to use parameters:
 - `"model/main_clnf_wild.txt"` - trained on In-the-wild data, works better in noisy environments (not very well suited for head pose tracking)
 - `"model/main_clm_general.txt"` - a less accurate but slightly faster CLM model trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
 - `"model/main_clm-z.txt"` - trained on Multi-PIE and BU-4DFE datasets, works with both intensity and depth signals (CLM-Z)
+
+Optional camera parameters for proper head pose visualization:
+
+	-fx <focal length in x>
+	-fy <focal length in y>
+	-cx <optical centre in x> 
+	-cy <optical centre in y>
