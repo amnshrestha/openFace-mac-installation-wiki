@@ -1,3 +1,5 @@
+Best way to see how the command line arguments work is through looking at `./matlab_runners/Demos/` which illustrates how each of the models is called
+
 ## FaceLandmarkVid and FaceLandmarkVidMulti
 
 Parameters for input (if nothing is specified attempts to read from a webcam with default values)
@@ -17,17 +19,6 @@ Parameters for output:
 
     -ov <location of visualized track>
 
-Model parameters:
-
-    -mloc <the location of landmark detection models>
-
-  Options for this:
-        
-- `"model/main_clnf_general.txt"` (default) - trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
-- `"model/main_clnf_wild.txt"` - trained on In-the-wild data, works better in noisy environments (not very well suited for head pose tracking)
-- `"model/main_clm_general.txt"` - a less accurate but slightly faster CLM model trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
-- `"model/main_clm-z.txt"` - trained on Multi-PIE and BU-4DFE datasets, works with both intensity and depth signals (CLM-Z)
-
 ## FaceLandmarkImg
 
 Single image analysis:
@@ -44,8 +35,24 @@ Batch image analysis:
 
 Model parameters (apply to images and videos):
 
-    -mloc <the location of landmark detection models, see above for details>
-    -wild - specify when the images are more difficult, model considers extended search regions
+    -wild flag specifies when the images are more difficult, model considers extended search regions
     -multi-view <0/1>, should multi-view initialisation be used (more robust, but slower)
 
 Output format - The file format is same as 300 faces in the wild challenge annotations (http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)
+
+## FeatureExtraction
+
+## Common parameters for all
+
+    -q specifying to use quiet mode not visualizing output
+
+Model to use parameters:
+
+    -mloc <the location of landmark detection models>
+
+  Options for this:
+        
+- `"model/main_clnf_general.txt"` (default) - trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
+- `"model/main_clnf_wild.txt"` - trained on In-the-wild data, works better in noisy environments (not very well suited for head pose tracking)
+- `"model/main_clm_general.txt"` - a less accurate but slightly faster CLM model trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
+- `"model/main_clm-z.txt"` - trained on Multi-PIE and BU-4DFE datasets, works with both intensity and depth signals (CLM-Z)
