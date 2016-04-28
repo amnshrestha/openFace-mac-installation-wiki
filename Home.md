@@ -9,11 +9,14 @@ More details about the project - http://www.cl.cam.ac.uk/research/rainbow/projec
 ## Functionality
 
 - Facial Landmark Detection
-- Facial Landmark Tracking
-- Head Pose Tracking
-- Facial Action Unit Recognition
-- Gaze tracking
-- Facial Feature Extraction
+
+- Facial Landmark and head pose tracking (link to YouTube videos)
+
+- Facial Action Unit Recognition (image of it in action)
+
+- Gaze tracking (image of it in action)
+
+- Facial Feature Extraction (HOG image)
 
 ## Installation
 
