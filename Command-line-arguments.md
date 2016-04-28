@@ -2,7 +2,7 @@ Best way to see how the command line arguments work is through looking at `./mat
 
 ## FaceLandmarkVid and FaceLandmarkVidMulti
 
-Parameters for input (if nothing is specified attempts to read from a webcam with default values)
+**Parameters for input**
 
    `-f <filename>` the video file being input, can specify multiple files
 
@@ -12,13 +12,13 @@ Parameters for input (if nothing is specified attempts to read from a webcam wit
 
    `-root <directory>` the root of input and output so `-f` and `-ov` can be specified relative to it
 
-Parameters for output:
+**Parameters for output**
 
    `-ov <location of visualized track>` where to output video file with tracked landmarks
 
 ## FaceLandmarkImg
 
-Single image analysis:
+**Single image analysis**
 
    `-f <filename>` the image file being input, can have multiple `-f` flags
 
@@ -28,7 +28,7 @@ Single image analysis:
 
    `-root <dir>` the root directory so `-f`, `-of` and `-oi` can be specified relative to it
 
-Batch image analysis:
+**Batch image analysis**
 	
    `-fdir <directory>` - runs landmark detection on all images (.jpg and .png) in a directory, if the directory contains .txt files (image_name.txt) with bounding box (`min_x min_y max_x max_y`), it will use those for initialisation
 
@@ -40,6 +40,8 @@ Output format - The file format is same as 300 faces in the wild challenge annot
 
 ## FeatureExtraction
 
+**Input parameters**
+
    `-f <filename>` the video file being input, can specify multiple `-f` 
 
    `-fdir <directory>` run the feature extraction on every image (.jpg and .png) in a directory (the output will be stored in individual files for the whole directory)
@@ -48,7 +50,7 @@ Output format - The file format is same as 300 faces in the wild challenge annot
 
    `-root <dir>` the root for input
 	
-Parameters for output:
+**Parameters for output**
 
    `-outroot <dir>` the root directory relevant to which the output files are created
 	
@@ -62,7 +64,7 @@ Parameters for output:
 
    `-world_coord <1/0>` should rotation be measured with respect to the camera or world coordinates
 
-Additional parameters for output:
+**Additional parameters for output**
 	
    `-verbose` visualise the HOG features if they are being output
 
@@ -92,7 +94,7 @@ You might not always want to extract all the output features (gaze, Action Units
 
     -q specifying to use quiet mode not visualizing output
 
-Model to use parameters:
+**Model to use parameters**
 
     -mloc <the location of landmark detection models>
 
@@ -103,13 +105,13 @@ Model to use parameters:
 - `"model/main_clm_general.txt"` - a less accurate but slightly faster CLM model trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
 - `"model/main_clm-z.txt"` - trained on Multi-PIE and BU-4DFE datasets, works with both intensity and depth signals (CLM-Z)
 
-Model parameters:
+**Model parameters**
 
    `-wild` flag specifies when the images are more difficult, model considers extended search regions
 
    `-multi-view <0/1>` should multi-view initialisation be used (more robust, but slower), off by default
 
-Optional camera parameters for proper head pose visualization:
+**Optional camera parameters for proper head pose and eye gaze computation**
 
 	-fx <focal length in x>
 	-fy <focal length in y>
