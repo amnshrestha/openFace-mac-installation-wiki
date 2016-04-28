@@ -21,7 +21,9 @@ You have to respect boost, TBB, dlib, and OpenCV licenses.
 ## Use
 
 [Command line](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
+
 GUI for Windows (Coming soon)
+
 Messaging server (Coming soon)
 
 ## Functionality
