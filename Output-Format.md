@@ -15,8 +15,29 @@ The detected landmarks in an image are output in a text file, with a postfix `_d
     }
 
 Each line corresponds to a facial landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
-
 <img src="http://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg" height="400" width="400" >
+
+If `-opdir <dir>` is specified then the format changes to
+    version: 1
+    npoints: 68
+    {
+    -34.4666 11.5525 501.305
+    -35.9184 33.9751 502.034
+    -35.361 56.7779 503.278
+    ...
+    40.2726 77.8179 448.076
+    33.2769 76.5671 447.281
+    }
+    pose: eul_x, eul_y, eul_z: 
+    {
+    -0.193585 -0.0835944 0.0948636
+    }
+    gaze: dir_x_1, dir_y_1, dir_z_1, dir_x_2, dir_y_2, dir_z_2: 
+    {
+    0.0604244 0.125688 -0.990228 -0.137919 0.204113 -0.969183
+    }
+
+Where the landmarks are no longer in pixel values but in milimeters and we also report head pose and gaze (this however needs accurate estimates of `fx,fy,cx,cy`. This functionality is useful for batch image processing where the camera is the same and we want to know pose and gaze.
 
 ## FeatureExtraction
 
