@@ -84,7 +84,7 @@ To acquire all of the dependencies follow the steps:
 
     - for feature extraction (facial landmarks, head pose, AUs, gaze and HOG and similarity aligned faces):
 
-        `./bin/FeatureExtraction -rigid  -verbose -f "./videos/default.wmv" -op "output_features/default_pose.txt" -of "output_features/default.txt"`
+        `./bin/FeatureExtraction -rigid  -verbose -f "./videos/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned`
 
 # Troubleshooting
 
