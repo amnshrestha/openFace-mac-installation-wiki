@@ -74,8 +74,16 @@ Parameters of a point distribution model (PDM) that describe the rigid face shap
 
 **Facial Action Units**
 
-AU01_r, AU02_r, AU04_r, AU05_r, AU06_r, AU09_r, AU10_r, AU12_r, AU14_r, AU15_r, AU17_r, AU20_r, AU25_r, AU26_r, AU04_c, AU12_c, AU15_c, AU23_c, AU28_c, AU45_c
+Facial Action Units (AUs) are a way to describe human facial expression, more details on how they are defined can be found [here](http://www.cs.cmu.edu/~face/facs.htm)
 
-Similarity aligned work
+The system can detect the intensity (from 0 to 5) of 14 AUs:
 
-HOG features
+`AU01_r, AU02_r, AU04_r, AU05_r, AU06_r, AU09_r, AU10_r, AU12_r, AU14_r, AU15_r, AU17_r, AU20_r, AU25_r, AU26_r`
+
+And the presense (0 absent, 1 present) of 6 AUs:
+
+`AU04_c, AU12_c, AU15_c, AU23_c, AU28_c, AU45_c`
+
+**Similarity aligned faces**
+
+**HOG features**
