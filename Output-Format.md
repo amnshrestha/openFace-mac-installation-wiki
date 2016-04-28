@@ -106,6 +106,8 @@ And the presense (0 absent, 1 present) of 6 AUs:
 
 `AU04_c, AU12_c, AU15_c, AU23_c, AU28_c, AU45_c`
 
-**Similarity aligned faces**
+**Similarity aligned faces and HOG**
 
-**HOG features**
+![Sample aligned face and HOG image](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/appearance.png)
+
+The code also allows for extraction of aligned faces (left) and HOG features (right). The HOG features are written as a binary file (for space consideration) and can be read in using the `./matlab_runners/Demos/Read_HOG_files.m` script to Matlab, see `./matlab_runners/Demos/feature_extraction_demo_vid.m` for an example (only on Windows at the moment). Once the script is finished, the HOG features are stored in `hog_data` variable
