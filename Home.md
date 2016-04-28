@@ -50,3 +50,8 @@ in *IEEE International. Conference on Computer Vision (ICCV)*,  2015
 Tadas Baltrušaitis, Marwa Mahmoud, and Peter Robinson 
 in *Facial Expression Recognition and Analysis Challenge*, 
 *IEEE International Conference on Automatic Face and Gesture Recognition*, 2015 
+
+# Final remarks
+
+I did my best to make sure that the code runs out of the box but there are always issues and I would be grateful for your understanding that this is research code and not a commercial level product. However, if you encounter any problems/bugs/issues please contact me on github or by emailing me at Tadas.Baltrusaitis@cl.cam.ac.uk for any bug reports/questions/suggestions. 
+
