@@ -36,6 +36,8 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-oidir <directory>` directory where images with detected landmarks should be stored
 
+   `-opdir <directory>` directory where pose files are output (3D landmarks in images together with head pose and gaze)
+
 Output format - The file format is same as 300 faces in the wild challenge annotations (http://ibug.doc.ic.ac.uk/resources/facial-point-annotations/)
 
 ## FeatureExtraction
