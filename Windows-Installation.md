@@ -25,3 +25,5 @@ Alternatively if you don't have matlab try these command line arguments from `Re
 - `FaceLandmarkImg.exe -wild -fdir "../videos/" -ofdir "../matlab_runners/demo_img/" -oidir "../matlab_runners/demo_img/"`
 
 - `FaceTrackingVid.exe -f "../videos/changeLighting.wmv" -f "../videos/0188_03_021_al_pacino.avi" -f "../videos/0217_03_006_alanis_morissette.avi"`
+
+See [command line arguments](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments) for more details of how to use the binaries
