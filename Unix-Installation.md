@@ -18,7 +18,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     `sudo apt-get install build-essential`
 
-2. Cmake: 
+2. Cmake:
 
     `sudo apt-get install cmake`
 
@@ -34,11 +34,11 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
         sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev checkinstall
 
-    4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip 
+    4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip
 
         wget https://github.com/Itseez/opencv/archive/3.1.0.zip
 
-    4.3 Unzip it and create a build folder:	
+    4.3 Unzip it and create a build folder:
 
         sudo unzip 3.1.0.zip
         cd opencv-3.1.0
@@ -52,8 +52,8 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 	`make -j2`
 
 	`sudo make install`
-	
-5. Get Boost: 
+
+5. Get Boost:
 
     `sudo apt-get install libboost1.55-all-dev`
 
@@ -62,19 +62,19 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 ### Ubuntu 15.10
 
 1. Get LLVM, Clang and libc++:
-   
+
     1.1 Install LLVM and Clang dependencies:
-       
+
     `sudo apt-get udpate`
 
     `sudo apt-get install build-essential`
 
-    1.2 Install LLVM:    
+    1.2 Install LLVM:
 
     `sudo apt-get install llvm`
 
     1.3 Install Clang along with relevant packages:
-        
+
     * Check that the correct repository is enabled by inspecting '/etc/apt/sources.list':
 
         `sudo gedit /etc/apt/sources.list`
@@ -91,7 +91,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
       `sudo apt-get install clang-3.7 libc++-dev libc++abi-dev`
 
-2. Get Cmake: 
+2. Get Cmake:
 
     `sudo apt-get install cmake`
 
@@ -107,11 +107,11 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
         sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev checkinstall
 
-    4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip 
+    4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip
 
         wget https://github.com/Itseez/opencv/archive/3.1.0.zip
 
-    4.3 Unzip it and create a build folder:	
+    4.3 Unzip it and create a build folder:
 
         sudo unzip 3.1.0.zip
         cd opencv-3.1.0
@@ -125,8 +125,8 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 	`make -j2`
 
 	`sudo make install`
-	
-5. Get Boost 1.61.0: 
+
+5. Get Boost 1.61.0:
 
     5.1 Install boost dependency:
 
@@ -138,18 +138,18 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     In the directory where you want to put the boost installation, execute:
 
-    `tar --bzip2 -xf /path/to/boost_1_61_0.tar.bz2` 
+    `tar --bzip2 -xf /path/to/boost_1_61_0.tar.bz2`
 
     5.3 Build and install:
 
         cd path/to/boost_1_61_0
         ./bootstrap.sh --with-toolset=clang --prefix=/usr/local
         ./b2 toolset=clang cxxflags="-std=c++11 -stdlib=libc++ -I/usr/include/libcxxabi" linkflags="-stdlib=libc++" --prefix=/usr/local -j 10 define=BOOST_SYSTEM_NO_DEPRECATED stage release
-        sudo ./b2 install toolset=clang cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" --prefix=/usr/local 
+        sudo ./b2 install toolset=clang cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" --prefix=/usr/local
 
 ## Actual OpenFace installation
 
-1. Get OpenFace 
+1. Get OpenFace
 
     `git clone https://github.com/TadasBaltrusaitis/OpenFace.git`
 
@@ -161,8 +161,8 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     `make`
 
-3. Test it with 
-    - for videos:	
+3. Test it with
+    - for videos:
 
         `./bin/FaceLandmarkVid -f "./videos/changeLighting.wmv" -f "./videos/0188_03_021_al_pacino.avi" -f "./videos/0217_03_006_alanis_morissette.avi" -f "./videos/0244_03_004_anderson_cooper.avi"`
 
