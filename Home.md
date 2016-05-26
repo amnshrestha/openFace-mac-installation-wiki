@@ -38,6 +38,8 @@ The system is capable of performing a number of facial analysis tasks:
 
 [Ubuntu](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Unix-Installation)
 
+[Mac](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Mac-Installation)
+
 ## Use
 
 [Command line](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
