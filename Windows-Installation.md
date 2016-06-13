@@ -10,6 +10,8 @@ For Windows this software comes prepackaged with all the necessary binaries and 
 ### Release Mode
 NOTE be sure to run the project without debugger attached and in Release mode for speed (if running from Visual Studio). To run without debugger attach use CTRL + F5 instead of F5. To change from Debug mode to Release mode select Release from drop down menu in the toolbar. This can mean the difference between running at 5fps and 60fps on 320x240px videos. 
 
+NOTE 2 make sure the startup project you select is one of the projects in Executables (`FaceLandmarkImg`, `FaceLandmarkVid`, `FaceLandmarkVidMulti`, or `FeatureExtraction`) as other projects (`dlib`, `FaceAnalyser`, `LandmarkDetector`) are libraries and will not work as executables. To change the start up project, right click on the project in the Solution Explorer and select *Set as StartUp project*
+
 ### Architecture
 The software works both on 32 and 64 bit architectures. I  found that the x64 version seems to run faster on most machines. Furthermore, all the demo scripts assume you compiled the x64 version. To change versions go to the top bar and change Win32 to x64 (next to the Debug/Release choice).
 
