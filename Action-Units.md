@@ -41,10 +41,10 @@ The code for training AU prediction models is available at
 ## Datasets used for training AUs in OpenFace
 
 The datasets that were used for training AU recognition models are as follows:
-	- [Bosphorus](http://bosphorus.ee.boun.edu.tr/)
-	- [BP4D from FERA2015](http://sspnet.eu/fera2015/)
-	- [DISFA](http://www.engr.du.edu/mmahoor/DISFA.htm)
-	- [FERA2011](http://sspnet.eu/fera2011/fera2011data/)
-	- [SEMAINE from FERA2015](http://sspnet.eu/fera2015/)
-	- [UNBC](http://www.pitt.edu/~emotion/um-spread.htm)
+- [Bosphorus](http://bosphorus.ee.boun.edu.tr/)
+- [BP4D from FERA2015](http://sspnet.eu/fera2015/)
+- [DISFA](http://www.engr.du.edu/mmahoor/DISFA.htm)
+- [FERA2011](http://sspnet.eu/fera2011/fera2011data/)
+- [SEMAINE from FERA2015](http://sspnet.eu/fera2015/)
+- [UNBC](http://www.pitt.edu/~emotion/um-spread.htm)
 
