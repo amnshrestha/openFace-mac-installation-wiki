@@ -13,10 +13,36 @@ The detected landmarks in an image are output in a text file, with a postfix `_d
     662.5 252.346
     654.784 251.901
     }
-
-Each line corresponds to a facial landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
+    pose: eul_x, eul_y, eul_z: 
+    {
+    0.396767 0.773298 -0.10933
+    }
+    gaze: dir_x_1, dir_y_1, dir_z_1, dir_x_2, dir_y_2, dir_z_2: 
+    {
+    0 0 -1 0 0 -1
+    }
+    au intensities: 17
+    {
+    AU01 0
+    AU02 0
+    ...
+    AU45 4.1
+    }
+    au occurences: 18
+    {
+    AU01 0
+    AU02 0
+    ...
+    AU28 0
+    AU45 1
+    }
+Each line in `npoints` corresponds to a facial landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
 
 <img src="http://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg" height="400" width="400" >
+
+Line in `pose` corresponds to head orientation in Euler angles. Line in `gaze` corresponds to eye gaze vectors for left and right eye.
+
+Lines in `au intensities` and `au occurrences` correspond to predicted Action Unit presence and intensities respectively. For more details see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units)
 
 If `-opdir <dir>` is specified then the format changes to:
 
