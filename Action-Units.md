@@ -26,11 +26,15 @@ Use `FaceLandmarkImg` project and executable for this, it will output AU predict
 
 ### Image sequences and videos
 
-If you want to extract 
+If you want to extract facial action 
 
-- Static vs dynamic
+### Static vs dynamic
 
-- How they are trained and where the instructions for training are
+OpenFace uses two types of AU prediction models - `static` and `dynamic`. The `static` models only rely on a single image to make an estimate of AU presence or intensity, while `dynamic` ones calibrate to a person by performing person normalization in the video, they also attempt to correct for over and under prediction of AUs. By default OpenFace uses static models on images and dynamic models on image sequences and videos.
 
-- Datasets used for training
+However, some video sequences do not have much dynamic range - the same expression is held throughout the video, this means that post calibration will not be helpful and might in fact be harmful, for those video sequences I recommend using `-au_static` flag which tells OpenFace not to perform dynamic calibration and to use only static models for AU prediction.
+
+## Training AU models
+
+## Datasets used for training AUs in OpenFace
 
