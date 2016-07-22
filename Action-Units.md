@@ -20,7 +20,13 @@ OpenFace provides both of these scores. For presence of AU 1 the column `AU01_c`
 
 OpenFace is able to extract Action Units both from images, image sequences and videos
 
-### Images
+### Individual Images
+
+Use `FaceLandmarkImg` project and executable for this, it will output AU predictions for each image. Please note that the accuracy of AU prediction on individual images is not as high as that of AU prediction on videos because videos allow for person specific calibration.
+
+### Image sequences and videos
+
+If you want to extract 
 
 - Static vs dynamic
 
