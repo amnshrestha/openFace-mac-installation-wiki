@@ -22,7 +22,7 @@ OpenFace is able to extract Action Units both from images, image sequences and v
 
 ### Individual Images
 
-Use `FaceLandmarkImg` project and executable for this, it will output AU predictions for each image. Please note that the accuracy of AU prediction on individual images is not as high as that of AU prediction on videos because videos allow for person specific calibration. For more details of how to perform the extraction see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units)
+Use `FaceLandmarkImg` project and executable for this, it will output AU predictions for each image. Please note that the accuracy of AU prediction on individual images is not as high as that of AU prediction on videos because videos allow for person specific calibration. For more details of how to perform the extraction see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
 
 ### Image sequences and videos
 
