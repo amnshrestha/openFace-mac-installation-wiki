@@ -15,6 +15,7 @@ The detected landmarks in an image are output in a text file, with a postfix `_d
     }
 
 Each line corresponds to a facial landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
+
 <img src="http://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg" height="400" width="400" >
 
 If `-opdir <dir>` is specified then the format changes to:
