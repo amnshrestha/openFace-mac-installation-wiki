@@ -22,7 +22,9 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-f <filename>` the image file being input, can have multiple `-f` flags
 
-   `-of <filename>` location of output landmark points file
+   `-of <filename>` location of output file for landmark points, gaze and action units
+
+   `-op <filename>` location of output file for 3D landmark points and head pose
 
    `-oi <filename>` location of output image with landmarks
 
@@ -32,7 +34,7 @@ Best way to see how the command line arguments work is through looking at `./mat
 	
    `-fdir <directory>` - runs landmark detection on all images (.jpg and .png) in a directory, if the directory contains .txt files (image_name.txt) with bounding box (`min_x min_y max_x max_y`), it will use those for initialisation
 
-   `-ofdir <directory>` directory where detected landmarks should be written
+   `-ofdir <directory>` directory where detected landmarks, gaze, and action units should be written
 
    `-oidir <directory>` directory where images with detected landmarks should be stored
 
