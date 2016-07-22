@@ -53,6 +53,8 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
    `-asvid` if this flag is specified the images in -fdir directory will be treated as if they came from a video, that is they form a sequence, so tracking will be done instead of detection per videos)
 
    `-root <dir>` the root for input
+
+   `-au_static` if this flag is specified the AU prediction will be performed as if on static images rather than videos, see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units#static-vs-dynamic) for a more detailed explanation
 	
 **Parameters for output (for more details on output format see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format#featureextraction))**
 
