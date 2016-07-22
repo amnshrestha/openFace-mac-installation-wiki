@@ -6,6 +6,8 @@ Windows binaries can be found here:
 
 For the binaries to work you need to have Visual Studio 2015 installed or need to install the 64-bit Visual C++ redistributable package, that can be found [here](https://www.microsoft.com/en-us/download/details.aspx?id=48145).
 
+Explanation of how to use the command line binaries can be found [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
+
 # From code
 For Windows this software comes prepackaged with all the necessary binaries and dll's for compilation of the project, you still need to compile it in order to run it. You don't need to download anything additional, just open "OpenFace.sln" using Visual Studio 2015 and compile the code. The project was built and tested on Visual Studio 2015 (can't guarantee compatibility with other versions, and you would need to find/build the appropriate dll and lib files for them yourself). Code was tested on Windows 7/8/10 and Windows Server 2008 can't guarantee compatibility with other Windows versions (but in theory it should work). 
 
