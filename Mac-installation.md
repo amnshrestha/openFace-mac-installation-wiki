@@ -10,9 +10,9 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
 
 * Get [XQuartz](https://www.xquartz.org) (an X Window system for OS X).  You don't actually need it to *run* OpenFace, but having the X libraries and include files on your system will make OpenFace (and various other things) much easier to build.
 
-* Install *boost* and OpenCV with:
+* Install *boost*, TBB, and OpenCV with:
 
-    `brew install boost opencv3`
+    `brew install boost tbb opencv3`
 
 ## Tweaks
 
