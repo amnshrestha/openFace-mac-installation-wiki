@@ -74,8 +74,6 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 	
    `-verbose` visualise the HOG features if they are being output
 
-   `-rigid` use a slightly more robust version of similarity alignment. This uses and experimentally determined set of more stable feature points instead of all of them for determining similarity alignment, on by default
-
    `-simscale <float>` scale of the face for similarity alignment (default 0.7), different values won't work with AU extraction
 
    `-simsize <int>` width and height of image in pixels when similarity aligned (default 112), different values won't work with AU extraction
