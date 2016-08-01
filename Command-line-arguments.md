@@ -12,6 +12,10 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-root <directory>` the root of input and output so `-f` and `-ov` can be specified relative to it
 
+   `-inroot <directory>` the root of input so `-f` can be specified relative to it
+
+   `-outroot <directory>` the root of output so `-ov` can be specified relative to it
+
 **Parameters for output**
 
    `-ov <location of visualized track>` where to output video file with tracked landmarks
@@ -28,7 +32,11 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-oi <filename>` location of output image with landmarks
 
-   `-root <dir>` the root directory so `-f`, `-of` and `-oi` can be specified relative to it
+   `-root <dir>` the root directory so `-f`, `-of`, `-op`, and `-oi` can be specified relative to it
+
+   `-inroot <dir>` the input root directory so `-f` can be specified relative to it
+
+   `-outroot <dir>` the root directory so `-of`, `-op`, and `-oi` can be specified relative to it
 
 **Batch image analysis**
 	
@@ -52,7 +60,9 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 
    `-asvid` if this flag is specified the images in -fdir directory will be treated as if they came from a video, that is they form a sequence, so tracking will be done instead of detection per videos)
 
-   `-root <dir>` the root for input
+   `-root <dir>` the root for input and output
+
+   `-inroot <dir>` the root for input
 
    `-au_static` if this flag is specified the AU prediction will be performed as if on static images rather than videos, see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units#static-vs-dynamic) for a more detailed explanation
 	
