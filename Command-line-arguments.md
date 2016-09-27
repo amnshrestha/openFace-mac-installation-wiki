@@ -30,6 +30,8 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-op <filename>` location of output file for 3D landmark points and head pose
 
+   `-gaze` indicate that gaze estimation should be performed
+
    `-oi <filename>` location of output image with landmarks
 
    `-root <dir>` the root directory so `-f`, `-of`, `-op`, and `-oi` can be specified relative to it
