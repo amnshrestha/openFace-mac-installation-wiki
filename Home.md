@@ -40,6 +40,8 @@ The system is capable of performing a number of facial analysis tasks:
 
 [Mac](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Mac-Installation)
 
+[Docker image](https://hub.docker.com/r/benbuleong/openface-cambridge/) Might not be the latest version, but easy to use as no installation needed
+
 ## Use
 
 [Command line](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
