@@ -65,7 +65,7 @@ If `-opdir <dir>` is specified then the format changes to:
     0.0604244 0.125688 -0.990228 -0.137919 0.204113 -0.969183
     }
 
-Where the landmarks are no longer in pixel values but in milimeters and we also report head pose and gaze (this however needs accurate estimates of `fx,fy,cx,cy`. This functionality is useful for batch image processing where the camera is the same and we want to know pose and gaze.
+Where the landmarks are no longer in pixel values but in millimetres and we also report head pose and gaze (this however needs accurate estimates of `fx,fy,cx,cy`. This functionality is useful for batch image processing where the camera is the same and we want to know pose and gaze.
 
 ## FeatureExtraction
 
@@ -101,7 +101,7 @@ The header specifies the meaning of each column. The explanation of each:
 
 **Pose**
 
-`pose_Tx, pose_Ty, pose_Tz` the location of the head with respect to camera in milometers (positive Z is away from the camera)
+`pose_Tx, pose_Ty, pose_Tz` the location of the head with respect to camera in millimetre (positive Z is away from the camera)
 
 `pose_Rx, pose_Ry, pose_Rz` Rotation is in radians around X,Y,Z axes with the convention `R = Rx * Ry * Rz`, left-handed positive sign. The rotation can be either in world or camera coordinates (for visualisation we want rotation with respect to world coordinates). This is controlled by `world_coord <1/0>` flag
 
@@ -111,7 +111,7 @@ The header specifies the meaning of each column. The explanation of each:
 
 **Landmarks locations in 3D**
 
-`X_0, ... X_67, Y_0,...Y_67, Z_0,...Z_67`  location of 3D landmarks in milimeters, the landmark index can be seen above (just subtract 1 to get from a Matlab to a C++ standard). For this to be accurate need to have good estimates for `fx,fy,cx,cy`
+`X_0, ... X_67, Y_0,...Y_67, Z_0,...Z_67`  location of 3D landmarks in millimetres, the landmark index can be seen above (just subtract 1 to get from a Matlab to a C++ standard). For this to be accurate need to have good estimates for `fx,fy,cx,cy`
 
 **Rigid and non-rigid shape parameters**
 
