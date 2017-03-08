@@ -138,3 +138,17 @@ And the presense (0 absent, 1 present) of 18 AUs:
 ![Sample aligned face and HOG image](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/appearance.png)
 
 The code also allows for extraction of aligned faces (left) and HOG features (right). The HOG features are written as a binary file (for space consideration) and can be read in using the `./matlab_runners/Demos/Read_HOG_files.m` script to Matlab, see `./matlab_runners/Demos/feature_extraction_demo_vid.m` for an example (only on Windows at the moment). Once the script is finished, the HOG features are stored in `hog_data` variable
+
+It is also possible to control the size of the similarity aligned faces, using the `-simsize <pixel width and height>` and `-simscale <scale>` command line arguments, you can get the following results:
+
+Default parameters - size 112 and scale 0.7
+
+![aligned face default](https://github.com/TadasBaltrusaitis/OpenFace/blob/develop/imgs/frame_det_000000_112x112_0.7.bmp)
+
+Smaller scale - 0.5
+
+![aligned face small scale](https://github.com/TadasBaltrusaitis/OpenFace/blob/develop/imgs/frame_det_000001_112x112_0.5.bmp)
+
+Larger output - size 200 px
+
+![aligned face large output](https://github.com/TadasBaltrusaitis/OpenFace/blob/develop/imgs/frame_det_000001_200x200_0.7.bmp)
