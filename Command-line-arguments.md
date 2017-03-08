@@ -86,9 +86,9 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 	
    `-verbose` visualise the HOG features if they are being output
 
-   `-simscale <float>` scale of the face for similarity alignment (default 0.7), different values won't work with AU extraction
+   `-simscale <float>` scale of the face for similarity alignment (default 0.7)
 
-   `-simsize <int>` width and height of image in pixels when similarity aligned (default 112), different values won't work with AU extraction
+   `-simsize <int>` width and height of image in pixels when similarity aligned (default 112)
 
    `-g` output images should be grayscale (for saving space)
 
