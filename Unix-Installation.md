@@ -4,6 +4,8 @@ For Unix based systems and different compilers, I included Cmake files for cross
 
 This code has been tested on Ubuntu 14.04.1 with GCC, and on 15.10 with Clang 3.7.1.
 
+You can also run the `install.sh` script for installing on Ubuntu 16.04 (it combines the following steps into one script)
+
 ## Dependency installation
 
 This requires cmake, OpenCV 3.1.0 (or newer), tbb and boost.
