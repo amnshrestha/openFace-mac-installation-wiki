@@ -6,14 +6,14 @@ The best way to understand how landmark detection is performed in videos or imag
 
 A minimal code example for landmark detection is as follows:
 
-    LandmarkDetector::FaceModelParameters det_parameters
+    LandmarkDetector::FaceModelParameters det_parameters;
     LandmarkDetector::CLNF clnf_model(det_parameters.model_location);
     
     LandmarkDetector::DetectLandmarksInImage(grayscale_image, clnf_model, det_parameters);
 
 A minimal pseudo code example for landmark tracking is as follows:
 
-    LandmarkDetector::FaceModelParameters det_parameters
+    LandmarkDetector::FaceModelParameters det_parameters;
     LandmarkDetector::CLNF clnf_model(det_parameters.model_location);	
 
     while(video)
@@ -50,6 +50,28 @@ There are four methods in total that can return the head pose:
 `fx,fy,cx,cy` are camera callibration parameters needed to infer the 3D position of the head with respect to camera, a good assumption for webcams providing 640x480 images is 500, 500, img_width/2, img_height/2	
 
 ### Gaze
+
+To extract eye gaze you will need to have facial landmarks detected using a `LandmarkDetector::CLNF` model that contains eye region landmark detectors (used by default). You also need to make sure that `det_parameters.track_gaze = true`
+
+A minimal working example of tracking eye gaze vectors
+
+    LandmarkDetector::FaceModelParameters det_parameters;
+    det_parameters.track_gaze = true;
+    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);	
+
+    while(video)
+    {
+        bool success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, clnf_model, det_parameters);
+				
+        cv::Point3f gazeDirection0(0, 0, -1);
+        cv::Point3f gazeDirection1(0, 0, -1);
+
+        if (success && det_parameters.track_gaze)
+        {
+            FaceAnalysis::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
+            FaceAnalysis::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
+        }
+    }
 
 ### Action Units
 
