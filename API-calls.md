@@ -57,7 +57,7 @@ There are four methods in total that can return the head pose:
 
 To extract eye gaze you will need to have facial landmarks detected using a `LandmarkDetector::CLNF` model that contains eye region landmark detectors (used by default). You also need to make sure that `det_parameters.track_gaze = true`
 
-A minimal working example of tracking eye gaze vectors
+A minimal working example of tracking eye gaze vectors (direction vectors in the direction of eye gaze as measured from the eye location)
 
     LandmarkDetector::FaceModelParameters det_parameters;
     det_parameters.track_gaze = true;
@@ -79,4 +79,20 @@ A minimal working example of tracking eye gaze vectors
 
 ### Action Units
 
-### Appearance features
+Facial Action Units can be extracted in each image in a static manner or extracted from a video in a dynamic manner. The dynamic model is more accurate if enough video data is available for a person (roughly more than 300 frames that contain a number of non-expressive frames). 
+
+To extract AUs from an image:
+
+    LandmarkDetector::FaceModelParameters det_parameters;
+    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);	
+
+    // Initialize static AU predictor
+    string au_loc = "AU_predictors/AU_all_static.txt";
+    FaceAnalysis::FaceAnalyser face_analyser(vector<cv::Vec3d>(), 0.7, 112, 112, au_loc, tri_loc);
+
+    bool success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, clnf_model, det_parameters);
+    auto ActionUnits = face_analyser.PredictStaticAUs(read_image, clnf_model, false)
+
+ActionUnits will contain a `std::pair<std::vector<std::pair<string, double>>, std::vector<std::pair<string, double>>>` a pair of vectors (first for AU intensity and second for AU presence). Each vector contains the AU name and presence or intensity value.
+
+To extract AUs in a video look at `FeatureExtraction.cpp` for a detailed example that performs offline AU normalization.
