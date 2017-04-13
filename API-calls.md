@@ -57,7 +57,7 @@ There are four methods in total that can return the head pose:
 
 To extract eye gaze you will need to have facial landmarks detected using a `LandmarkDetector::CLNF` model that contains eye region landmark detectors (used by default). You also need to make sure that `det_parameters.track_gaze = true`
 
-A minimal working example of tracking eye gaze vectors (direction vectors in the direction of eye gaze as measured from the eye location)
+A minimal pseudo code example of tracking eye gaze vectors (direction vectors in the direction of eye gaze as measured from the eye location)
 
     LandmarkDetector::FaceModelParameters det_parameters;
     det_parameters.track_gaze = true;
