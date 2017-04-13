@@ -1,3 +1,7 @@
+The best way to familiarize yourself with the API and system capabilities is by exploring the executables provided with the library, specifically files - `FaceLandmarkImg.cpp,FaceLandmarkVid.cpp,FeatureExtraction.cpp,FaceLandmarkVidMulti.cpp`
+
+In the following, we document the most important/interesting API calls
+
 ### Landmark detection and tracking
 
 `LandmarkDetector::CLNF` class is the main class you will interact with, it performs the main landmark detection algorithms and stores the results. The interaction with the class is declared mainly in the `LandmarkDetectorFunc.h`, and will require an initialized `LandmarkDetector::CLNF` object. 
