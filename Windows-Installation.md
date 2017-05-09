@@ -28,10 +28,10 @@ To test if the system compiled correctly or to test binaries go to `matlab_runne
   - `gaze_extraction_demo_vid.m` gaze in videos
   - `feature_extraction_demo_vid.m` various features (pose, landmarks, gaze, and Action Units from a video)
 
-Alternatively if you don't have matlab try these command line arguments from `Release` directory (add extra `../` if running from `x64/Release/`:
+Alternatively if you don't have Matlab try these command line arguments from `Release` directory (add extra `../` if running from `x64/Release/`:
 
-- `FaceLandmarkImg.exe -wild -fdir "../videos/" -ofdir "../matlab_runners/demo_img/" -oidir "../matlab_runners/demo_img/"`
+- `FaceLandmarkImg.exe -wild -fdir "../samples/" -ofdir "../matlab_runners/demo_img/" -oidir "../matlab_runners/demo_img/"`
 
-- `FaceTrackingVid.exe -f "../videos/changeLighting.wmv" -f "../videos/0188_03_021_al_pacino.avi" -f "../videos/0217_03_006_alanis_morissette.avi"`
+- `FaceTrackingVid.exe -f "../samples/changeLighting.wmv" -f "../samples/default.wmv"`
 
 See [command line arguments](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments) for more details of how to use the binaries
