@@ -179,19 +179,19 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 3. Test it with
     - for videos:
 
-        `./bin/FaceLandmarkVid -f "../videos/changeLighting.wmv" -f "../videos/0188_03_021_al_pacino.avi" -f "../videos/0217_03_006_alanis_morissette.avi" -f "../videos/0244_03_004_anderson_cooper.avi"`
+        `./bin/FaceLandmarkVid -f "../samples/changeLighting.wmv" -f "../samples/2015-10-15-15-14.avi"`
 
     - for images:
 
-        `./bin/FaceLandmarkImg -fdir "../videos/" -ofdir "./demo_img/" -oidir "./demo_img/" -wild`
+        `./bin/FaceLandmarkImg -fdir "../samples/" -ofdir "./demo_img/" -oidir "./demo_img/" -wild`
 
     - for multiple faces in videos:
 
-        `./bin/FaceLandmarkVidMulti -f ../videos/multi_face.avi`
+        `./bin/FaceLandmarkVidMulti -f ../samples/multi_face.avi`
 
     - for feature extraction (facial landmarks, head pose, AUs, gaze and HOG and similarity aligned faces):
 
-        `./bin/FeatureExtraction -rigid  -verbose -f "../videos/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned`
+        `./bin/FeatureExtraction -rigid  -verbose -f "../samples/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned`
 
 # Troubleshooting
 
