@@ -13,6 +13,7 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
 * Install *boost*, TBB, and OpenCV with:
 
     `brew tap homebrew/science`
+
     `brew install boost tbb opencv3`
 
 ## Tweaks
