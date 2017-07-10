@@ -67,7 +67,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     1.1 Install LLVM and Clang dependencies:
 
-    `sudo apt-get udpate`
+    `sudo apt-get update`
 
     `sudo apt-get install build-essential`
 
