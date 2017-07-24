@@ -20,6 +20,8 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-ov <location of visualized track>` where to output video file with tracked landmarks
 
+   `-oc <FOURCC_CODE> the codec of the output video file (list of FOURCC codes can be found here - https://www.fourcc.org/codecs.php)
+ 
 ## FaceLandmarkImg
 
 **Single image analysis**
@@ -75,6 +77,9 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
    `-of <filename>` location of file
 
    `-ov <filename>` location location of tracked output video
+
+   `-oc <FOURCC_CODE> the codec of the output video file (list of FOURCC codes can be found here - https://www.fourcc.org/codecs.php)
+ 
 
    `-hogalign <filename>` output HOG feature location, outputs HOG in a binary file format (see ./matlab_runners/Demos/Read_HOG_files.m for a script to read it in Matlab)
 
