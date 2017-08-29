@@ -103,7 +103,7 @@ The header specifies the meaning of each column. The explanation of each:
 
 `pose_Tx, pose_Ty, pose_Tz` the location of the head with respect to camera in millimetre (positive Z is away from the camera)
 
-`pose_Rx, pose_Ry, pose_Rz` Rotation is in radians around X,Y,Z axes with the convention `R = Rx * Ry * Rz`, left-handed positive sign. The rotation can be either in world or camera coordinates (for visualisation we want rotation with respect to world coordinates). This is controlled by `world_coord <1/0>` flag
+`pose_Rx, pose_Ry, pose_Rz` Rotation is in radians around X,Y,Z axes with the convention `R = Rx * Ry * Rz`, left-handed positive sign. This can be seen as pitch (Rx), yaw (Ry), and roll (Rz). The rotation can be either in world or camera coordinates (for visualisation we want rotation with respect to world coordinates). This is controlled by `world_coord <1/0>` flag
 
 **Landmarks locations in 2D**
 
