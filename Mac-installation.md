@@ -14,7 +14,11 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
 
     `brew tap homebrew/science`
 
-    `brew install boost tbb opencv3`
+    `brew install tbb opencv3`
+
+    `brew install boost`
+
+Boost versions above 1.65 might clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50. To install a particular version of boost follow - https://stackoverflow.com/questions/104322/how-do-you-install-boost-on-macos
 
 ## Tweaks
 
@@ -48,7 +52,7 @@ A small point: on my system, selecting Quit from the application's menu didn't w
 
 ## Troubleshooting
 
-Boost versions above 1.65 clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50
+Boost versions above 1.65 clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50. To install a particular version of boost follow - https://stackoverflow.com/questions/104322/how-do-you-install-boost-on-macos
 
 *[Quentin Stafford-Fraser](http://quentinsf.com), May 2016*
 
