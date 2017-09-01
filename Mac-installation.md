@@ -46,6 +46,10 @@ and you should have binaries in the `bin` directory. e.g. you can run:
 
 A small point: on my system, selecting Quit from the application's menu didn't work, but typing Cmd-Q did.
 
+## Troubleshooting
 
+Boost versions above 1.65 clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50
 
 *[Quentin Stafford-Fraser](http://quentinsf.com), May 2016*
+
+
