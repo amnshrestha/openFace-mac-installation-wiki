@@ -195,5 +195,15 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
 # Troubleshooting
 
+## X server
+
 If you experience a problem with "cannot connect to X server" when trying to execute the tracker, a solution can be found here http://askubuntu.com/questions/64820/wkhtmltopdf-wkhtmltoimage-cannot-connect-to-x-server, to resolve run:
     `apt-get install xvfb`
+
+## Anaconda
+
+When Anaconda is installed, somehow OpenCV finds the outdated GCC 4.x instead of GCC 5.4, according to: https://stackoverflow.com/questions/40322301/compile-opencv-3-on-ubuntu-16-04-linking-error-usr-lib-x86-64-linux-gnu-libsox
+
+This results in OpenFace giving the error:
+usr/lib/x86_64-linux-gnu/libsoxr.so.0: undefined reference to `GOMP_parallel@GOMP_4.0'
+collect2: error: ld returned 1 exit status
