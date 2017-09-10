@@ -1,6 +1,10 @@
-For Unix based systems and different compilers, I included Cmake files for cross-platform and cross-IDE support.
+# Install script 
 
-# Ubuntu installation
+On most systems you can install OpenFace using the `./install.sh` script, if that does not work, use the following steps.
+
+# Advanced Ubuntu installation
+
+For Unix based systems and different compilers, I included Cmake files for cross-platform and cross-IDE support.
 
 This code has been tested on Ubuntu 14.04.1 with GCC, and on 15.10 with Clang 3.7.1.
 
