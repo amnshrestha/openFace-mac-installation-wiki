@@ -54,6 +54,8 @@ A small point: on my system, selecting Quit from the application's menu didn't w
 
 Boost versions above 1.65 clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50. To install a particular version of boost follow - https://stackoverflow.com/questions/104322/how-do-you-install-boost-on-macos
 
+If you're still having issues with boost have a look at - https://github.com/TadasBaltrusaitis/OpenFace/issues/258
+
 *[Quentin Stafford-Fraser](http://quentinsf.com), May 2016*
 
 
