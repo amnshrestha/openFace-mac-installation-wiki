@@ -89,7 +89,15 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 
 **Additional parameters for output**
 	
-   `-verbose` visualise the HOG features if they are being output
+   `-verbose` visualise the processing steps live: tracked face with gaze, similarity aligned face, and HOG feaures (not visualized by default), this flag turns all of them on, below flags allow for more fine-grained control
+
+   `-vis-track` visualise the tracked face
+
+   `-vis-hog` visualise the HOG features
+
+   `-vis-align` visualise similarity aligned faces
+
+   `-q` supress any live visualisation (this supresses all the other visualization flags)
 
    `-simscale <float>` scale of the face for similarity alignment (default 0.7)
 
