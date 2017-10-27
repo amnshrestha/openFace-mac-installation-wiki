@@ -21,6 +21,18 @@ The detected landmarks in an image are output in a text file, with a postfix `_d
     {
     0 0 -1 0 0 -1
     }
+    gaze: angle_x, angle_y:
+    {
+    0 0
+    }
+    eye_lmks: 56
+    {
+    603.825 193.492
+    604.934 209.987
+    ...
+    662.5 252.346
+    654.784 251.901	
+    }
     au intensities: 17
     {
     AU01 0
@@ -40,7 +52,18 @@ Each line in `npoints` corresponds to a facial landmark location in pixels `(x y
 
 <img src="http://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg" height="400" width="400" >
 
-Line in `pose` corresponds to head orientation in Euler angles. Line in `gaze` corresponds to eye gaze vectors for left and right eye.
+Line in `pose` corresponds to head orientation in Euler angles. 
+
+Gaze and eye features are only available if `-gaze` flag is set in command line arguments or `det_parameters.track_gaze = true` in code.
+
+Line in `gaze: dir_x_1...` corresponds to eye gaze vectors for left and right eye.
+
+Line in `gaze: angle_x, angle_y` corresponds to eye gaze angle in world coordinate space in radians.
+
+Each line in `eye_lmks: 56` corresponds to an eye region landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
+
+![Eye landmark markup](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/eye_lmk_markup.png)
+
 
 Lines in `au intensities` and `au occurrences` correspond to predicted Action Unit presence and intensities respectively. For more details see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units)
 
@@ -98,6 +121,10 @@ The header specifies the meaning of each column. The explanation of each:
 `gaze_0_x, gaze_0_y, gaze_0_z` Eye gaze direction vector in world coordinates for eye 0 (normalized)
 
 `gaze_1_x, gaze_1_y, gaze_2_z` Eye gaze direction vector in world coordinates for eye 0 (normalized)
+
+`gaze_angle_x, gaze_angle_y` Eye gaze direction in radians in world coordinates for both eyes and converted into more easy to use format than gaze vectors
+
+`eye_lmk_x_0, eye_lmk_x_1,... eye_lmk_x55, eye_lmk_y_1,... eye_lmk_y_55` location of 2D eye region landmarks in pixels. The landmark index can be found above
 
 **Pose**
 

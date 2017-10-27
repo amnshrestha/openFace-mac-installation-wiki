@@ -39,19 +39,15 @@ After landmark detection is done `clnf_model` stores the landmark locations and 
 
 ### Head pose tracking
 
-Head pose is stored in the following format `(X, Y, Z, rot_x, roty_y, rot_z)`,  translation is in millimeters with respect to camera centre, rotation is in radians around X,Y,Z axes with the convention R = Rx * Ry * Rz, left-handed positive sign. The rotation can be either in world or camera coordinates (for visualisation we want rotation with respect to world coordinates).
+Head pose is stored in the following format `(X, Y, Z, rot_x, roty_y, rot_z)`,  translation is in millimeters with respect to camera centre (positize Z away from camera), rotation is in radians around X,Y,Z axes with the convention R = Rx * Ry * Rz, left-handed positive sign. 
 
-There are four methods in total that can return the head pose:
-   - Getting the head pose w.r.t. camera assuming orthographic projection
-      `Vec6d GetPoseCamera(CLM& clnf_model, double fx, double fy, double cx, double cy, CLMParameters& params);`
-   - Getting the head pose w.r.t. world coordinates assuming orthographic projection
-      `Vec6d GetPoseWorld(CLM& clnf_model, double fx, double fy, double cx, double cy, CLMParameters& params);`
-   - Getting the head pose w.r.t. camera with a perspective camera correction
-      `Vec6d GetCorrectedPoseCamera(CLM& clnf_model, double fx, double fy, double cx, double cy, CLMParameters& params);`
-   - Getting the head pose w.r.t. world coordinates with a perspective camera correction
-      `Vec6d GetCorrectedPoseWorld(CLM& clnf_model, double fx, double fy, double cx, double cy, CLMParameters& params);`
+There are two methods that can return the head pose:
+   - Getting the head pose w.r.t. world coordinates with a perspective camera correction (default):
+      `Vec6d GetPose(const CLNF& clnf_model, float fx, float fy, float cx, float cy);`
+   - Getting the head pose w.r.t. camera with a perspective camera correction (	0,0,0 rotation is when a person is looking directly at the camera, useful for modeling attention etc.):
+      `Vec6d GetPoseWRTCamera(const CLNF& clnf_model, float fx, float fy, float cx, float cy);`
 
-`fx,fy,cx,cy` are camera callibration parameters needed to infer the 3D position of the head with respect to camera, a good assumption for webcams providing 640x480 images is 500, 500, img_width/2, img_height/2	
+`fx,fy,cx,cy` are camera callibration parameters needed to infer the 3D position of the head, a good assumption for webcams providing 640x480 images is 500, 500, img_width/2, img_height/2	
 
 ### Gaze
 
@@ -69,11 +65,13 @@ A minimal pseudo code example of tracking eye gaze vectors (direction vectors in
 				
         cv::Point3f gazeDirection0(0, 0, -1);
         cv::Point3f gazeDirection1(0, 0, -1);
+		cv::Vec2d gazeAngle(0, 0);
 
         if (success && det_parameters.track_gaze)
         {
-            FaceAnalysis::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
-            FaceAnalysis::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
+            GazeAnalysis::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
+            GazeAnalysis::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
+			gazeAngle = GazeAnalysis::GetGazeAngle(gazeDirection0, gazeDirection1, pose_estimate);
         }
     }
 
@@ -83,12 +81,13 @@ Facial Action Units can be extracted in each image in a static manner or extract
 
 To extract AUs from an image:
 
-    LandmarkDetector::FaceModelParameters det_parameters;
-    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);	
-
-    // Initialize static AU predictor
-    string au_loc = "AU_predictors/AU_all_static.txt";
-    FaceAnalysis::FaceAnalyser face_analyser(vector<cv::Vec3d>(), 0.7, 112, 112, au_loc, tri_loc);
+    // Load landmark detector
+    LandmarkDetector::FaceModelParameters det_parameters(arguments);
+    LandmarkDetector::CLNF face_model(det_parameters.model_location);
+    
+    // Load facial feature extractor and AU analyser
+    FaceAnalysis::FaceAnalyserParameters face_analysis_params(arguments);
+    FaceAnalysis::FaceAnalyser face_analyser(face_analysis_params);
 
     bool success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, clnf_model, det_parameters);
     auto ActionUnits = face_analyser.PredictStaticAUs(read_image, clnf_model, false)

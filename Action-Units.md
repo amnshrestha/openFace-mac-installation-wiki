@@ -16,6 +16,8 @@ AUs can be described in two ways
 
 OpenFace provides both of these scores. For presence of AU 1 the column `AU01_c` in the output file would encode 0 as not present and 1 as present. For intensity of AU 1 the column `AU01_r` in the output file would range from 0 (not present), 1 (present at minimum intensity), 5 (present at maximum intensity), with continuous values in between.
 
+Note that the intensity and presence predictors have been trained separately and on slightly different datasets, this means that the predictions of both might not always be consistent (e.g. the presence model could be predicting AU as not being present, but the intensity model could be predicting its value above 1).
+
 ## Extraction from images and extraction from videos
 
 OpenFace is able to extract Action Units both from images, image sequences and videos
@@ -47,4 +49,4 @@ The datasets that were used for training AU recognition models are as follows:
 - [FERA2011](http://sspnet.eu/fera2011/fera2011data/)
 - [SEMAINE from FERA2015](http://sspnet.eu/fera2015/)
 - [UNBC](http://www.pitt.edu/~emotion/um-spread.htm)
-
+- [CK+](http://www.pitt.edu/~emotion/ck-spread.htm)

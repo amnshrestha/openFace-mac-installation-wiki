@@ -8,8 +8,6 @@ Best way to see how the command line arguments work is through looking at `./mat
 
    `-device <device_num>` the webcam from which to read images (default 0)
 
-   `-fd <depth directory>` the directory where depth files are stored (deprecated)
-
    `-root <directory>` the root of input and output so `-f` and `-ov` can be specified relative to it
 
    `-inroot <directory>` the root of input so `-f` can be specified relative to it
@@ -85,8 +83,6 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 
    `-simalign <output directory>` output directory for aligned face images, outputs a similarity aligned and cropped face for further analysis
 
-   `-world_coord <1/0>` should rotation be measured with respect to the camera or world coordinates
-
 **Additional parameters for output**
 	
    `-verbose` visualise the processing steps live: tracked face with gaze, similarity aligned face, and HOG feaures (not visualized by default), this flag turns all of them on, below flags allow for more fine-grained control
@@ -132,7 +128,6 @@ You might not always want to extract all the output features (gaze, Action Units
 - `"model/main_clnf_general.txt"` (default) - trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking (CLNF model)
 - `"model/main_clnf_wild.txt"` - trained on In-the-wild data, works better in noisy environments (not very well suited for head pose tracking),  (CLNF in-the-wild model)
 - `"model/main_clm_general.txt"` - a less accurate but slightly faster CLM model trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
-- `"model/main_clm-z.txt"` - trained on Multi-PIE and BU-4DFE datasets, works with both intensity and depth signals (CLM-Z)
 
 **Model parameters**
 

@@ -7,6 +7,7 @@
       - `OpenCV3.1` - prepackaged OpenCV 3.1 library that is used extensively internally to provide support for basic computer vision functionallity
       - `dlib` - a header only dlib library (includes the face detector used for in-the-wild images)
       - `tbb` - prepackaged tbb code, library files and dll's
+	  - `OpenBLAS` - prepackaged OpenBLAS code for fast matrix multiplication
 - `./exe` - the runner and executables that show how to use the libraries for facial expression and head pose tracking, these best demonstrate how to use the libraries
    - `FaceLandmarkVid` - running single person landmark detection and gaze extraction on videos on disk or from a webcam
    - `FaceLandmarkImg` - running single or multi person landmark detection on images

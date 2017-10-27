@@ -81,10 +81,10 @@ in *Facial Expression Recognition and Analysis Challenge*,
 
 # Final remarks
 
-I did my best to make sure that the code runs out of the box but there are always issues and I would be grateful for your understanding that this is research code and not a commercial level product. However, if you encounter any problems/bugs/issues please contact me on github or by emailing me at Tadas.Baltrusaitis@cl.cam.ac.uk for any bug reports/questions/suggestions. 
+I did my best to make sure that the code runs out of the box but there are always issues and I would be grateful for your understanding that this is research code and not a commercial level product. However, if you encounter any problems/bugs/issues please contact me on github for any bug reports/questions/suggestions. 
 
 # Copyright
 
 Copyright can be found in the Copyright.txt
 
-You have to respect boost, TBB, dlib, and OpenCV licenses.
+You have to respect boost, TBB, dlib, OpenBLAS, and OpenCV licenses.

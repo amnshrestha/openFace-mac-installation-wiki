@@ -20,7 +20,7 @@ More details about the method itself [here](http://www.cl.cam.ac.uk/~tb346/pub/t
 ## Face validation
 
 A module for validating face detections (training and inference), it is used for tracking in videos so as to know when reinitialisation is needed:
-`matlab_version/face_validation_svr`
+`matlab_version/face_validation`
 
 Follow the readme there for instructions
 
