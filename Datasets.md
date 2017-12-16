@@ -1,4 +1,4 @@
-A number of publicly available datasets have been used to train and evaluate the OpenFace system, this page lists all of the datasets used.
+A number of publicly available datasets have been used to train and evaluate the OpenFace system, this page lists all of the datasets used. Without the availability of these datasets, OpenFace would not be possible and we thank their creators.
 
 ## Datasets used for training AUs in OpenFace
 
@@ -12,3 +12,9 @@ Action Unit predictors have been trained and evaluated on the following datasets
 - [CK+](http://www.pitt.edu/~emotion/ck-spread.htm)
 
 More details on the actual training procedure can be found here - https://github.com/TadasBaltrusaitis/OpenFace/blob/master/matlab_version/AU_training/instructions.txt
+
+## Datasets used for evaluating head pose
+
+- [ICT-3DHP](http://projects.ict.usc.edu/3dhp/)
+- [Boston University] (http://www.cs.bu.edu/groups/ivc/data.php)
+- [Biwi] (https://data.vision.ee.ethz.ch/cvl/gfanelli/head_pose/head_forest.html)
