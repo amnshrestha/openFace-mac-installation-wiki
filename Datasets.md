@@ -16,8 +16,8 @@ More details on the actual training procedure can be found here - https://github
 ## Datasets used for evaluating head pose
 
 - [ICT-3DHP](http://projects.ict.usc.edu/3dhp/)
-- [Boston University] (http://www.cs.bu.edu/groups/ivc/data.php)
-- [Biwi] (https://data.vision.ee.ethz.ch/cvl/gfanelli/head_pose/head_forest.html)
+- [Boston University](http://www.cs.bu.edu/groups/ivc/data.php)
+- [Biwi](https://data.vision.ee.ethz.ch/cvl/gfanelli/head_pose/head_forest.html)
 
 ## Datasets used for evaluating eye gaze
 
