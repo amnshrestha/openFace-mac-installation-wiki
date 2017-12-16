@@ -18,3 +18,7 @@ More details on the actual training procedure can be found here - https://github
 - [ICT-3DHP](http://projects.ict.usc.edu/3dhp/)
 - [Boston University] (http://www.cs.bu.edu/groups/ivc/data.php)
 - [Biwi] (https://data.vision.ee.ethz.ch/cvl/gfanelli/head_pose/head_forest.html)
+
+## Datasets used for evaluating eye gaze
+
+- [MPII](https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/gaze-based-human-computer-interaction/appearance-based-gaze-estimation-in-the-wild/), note we used a private subset with full face images that is not available to the public
