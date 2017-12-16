@@ -1,8 +1,8 @@
-A number of publicly available datasets have been used to train and evaluate the OpenFace system, this page lists all of the datasets used. Without the availability of these datasets, OpenFace would not be possible and we thank their creators.
+A number of publicly available datasets have been used to train and evaluate the OpenFace system, this page lists all of the datasets used. Without the availability of these datasets, OpenFace would not be possible and we thank their creators. Also please consider citing the datasets if you are using the relevant submodules of OpenFace.
 
 ## Datasets used for training and evaluating facial landmarks
-[CMU Multi-PIE](http://www.cs.cmu.edu/afs/cs/project/PIE/MultiPie/Multi-Pie/Home.html)
-[300W](https://ibug.doc.ic.ac.uk/resources/300-W/)
+- [CMU Multi-PIE](http://www.cs.cmu.edu/afs/cs/project/PIE/MultiPie/Multi-Pie/Home.html)
+- [300W](https://ibug.doc.ic.ac.uk/resources/300-W/)
 
 ## Datasets used for training AUs in OpenFace
 
