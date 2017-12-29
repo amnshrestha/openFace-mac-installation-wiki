@@ -62,6 +62,7 @@ After landmark detection is done `clnf_model` stores the landmark locations and 
 ### Head pose tracking
 
 Head pose is stored in the following format `(X, Y, Z, rot_x, roty_y, rot_z)`,  translation is in millimeters with respect to camera centre (positize Z away from camera), rotation is in radians around X,Y,Z axes with the convention R = Rx * Ry * Rz, left-handed positive sign. To get the head pose:
+    
     cv::Vec6d head_pose = LandmarkDetector::GetPose(face_model, fx, fy, cx, cy);
 
 `fx,fy,cx,cy` are camera callibration parameters needed to infer the 3D position of the head, a good assumption for webcams providing 640x480 images is 500, 500, img_width/2, img_height/2. If you are using `ImageCapture` or `SequenceCapture` utility classes, they will estimate the camera calibration parameters for you.
