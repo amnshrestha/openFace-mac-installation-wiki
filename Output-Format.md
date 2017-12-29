@@ -58,7 +58,7 @@ Where the landmarks are no longer in pixel values but in millimetres and we also
 
 `X_0, ... X_67, Y_0,...Y_67, Z_0,...Z_67`  location of 3D landmarks in millimetres, the landmark index can be seen below. For this to be accurate need to have good estimates for `fx,fy,cx,cy`
 
-<img src="https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/imgs/landmark_scheme_68.png" height="400" width="400" >
+<img src="https://github.com/TadasBaltrusaitis/OpenFace/raw/master/imgs/landmark_scheme_68.png" height="400" width="400" >
 
 **Rigid and non-rigid shape parameters**
 
