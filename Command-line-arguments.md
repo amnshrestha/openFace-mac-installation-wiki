@@ -6,35 +6,35 @@ One way of interacting with OpenFace is through command line arguments (e.g. Com
 
 If you want to extract OpenFace features (by features we refer to all the features extracted by OpenFace: facial landmarks, head pose, eye gaze, facial action units, similarity aligned faces, and HOG) from a **video** file in location `C:\my videos\video.avi`, assuming that only one person appears in that video file, execute the following command on the command line:
 
-`FeatureExtraction.exe -f "C:\my videos\video.avi"`
+    FeatureExtraction.exe -f "C:\my videos\video.avi"
 
 This will create a `processed` directory in the same directory (working directory) as `FeatureExtraction` that will contain the processed features (more [details](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format)).
 
 If you want to extract OpenFace features from multiple video files, e.g. `C:\my videos\video1.avi`, `C:\my videos\video2.avi`, `C:\my videos\video3.avi`, execute the following command on the command line:
 
-`FeatureExtraction.exe -f "C:\my videos\video1.avi" -f "C:\my videos\video2.avi" -f "C:\my videos\video3.avi"`
+    FeatureExtraction.exe -f "C:\my videos\video1.avi" -f "C:\my videos\video2.avi" -f "C:\my videos\video3.avi"
 
 If you only want to extract head pose from the video file in `C:\my videos\video1.avi`, execute the following command on the command line:
 
-`FeatureExtraction.exe -f "C:\my videos\video1.avi" -pose`
+    FeatureExtraction.exe -f "C:\my videos\video1.avi" -pose
 
 If instead of a video file you have a **sequence of images** in a directory with each image representing a frame (e.g. 001.jpg, 002.jpg, 003.jpg ... 200.jpg in directory `"C:\my videos\sequence1"`), you can extract features from that sequence:
 
-`FeatureExtraction.exe -fdir "C:\my videos\sequence1"`
+    FeatureExtraction.exe -fdir "C:\my videos\sequence1"
 
 If you want to extract OpenFace features from an **image** file in location `C:\my images\img.jpg` (can contain multiple people), execute the following command on the command line:
 
-`FaceLandmarkImg.exe -f "C:\my images\img.jpg"`
+    FaceLandmarkImg.exe -f "C:\my images\img.jpg"
 
 This will create a `processed` directory in the same directory (working directory) as `FaceLandmarkImg` that will contain the processed features (more [details](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format) ).
 
 If you want to extract OpenFace features from multiple video files, e.g. `C:\my images\img1.jpg`, `C:\my images\img2.jpg`, `C:\my images\img3.jpg`, execute the following command on the command line:
 
-`FaceLandmarkImg.exe -f "C:\my images\img1.jpg" -f "C:\my images\img2.jpg" -f "C:\my images\img3.jpg"`
+    FaceLandmarkImg.exe -f "C:\my images\img1.jpg" -f "C:\my images\img2.jpg" -f "C:\my images\img3.jpg"
 
 Alternatively, if you want to process all the images in the directory `C:\my images`, you can use:
 
-`FaceLandmarkImg.exe -fdir "C:\my images"`
+    FaceLandmarkImg.exe -fdir "C:\my images"
 
 This will process all of the images (.jpg, jpeg, .bmp, .png files) in the directory.
 
