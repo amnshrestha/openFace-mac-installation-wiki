@@ -1,10 +1,12 @@
-# OpenFace: a facial behavior analysis toolkit
+# OpenFace 0.3.0: a facial behavior analysis toolkit
 
 Over the past few years, there has been an increased interest in automatic facial behavior analysis and understanding. We present OpenFace – a tool intended for computer vision and machine learning researchers, affective computing community and people interested in building interactive applications based on facial behavior analysis. OpenFace is the ﬁrst toolkit capable of facial landmark detection, head pose estimation, facial action unit recognition, and eye-gaze estimation with available source code. The computer vision algorithms which represent the core of OpenFace demonstrate state-of-the-art results in all of the above mentioned tasks. Furthermore, our tool is capable of real-time performance and is able to run from a simple webcam without any specialist hardware.
 
-The code was written mainly by Tadas Baltrusaitis during his time at the Language Technologies Institute at the Carnegie Mellon University and Computer Laboratory, University of Cambridge.
+![Multicomp logo](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/muticomp_logo_black.png)
 
-More details about the project - http://www.cl.cam.ac.uk/research/rainbow/projects/openface/
+![Rainbow logo](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/rainbow-logo.gif)
+
+OpenFace is an implementation of a number of research papers from the Multicomp group, Language Technologies Institute at the Carnegie Mellon University and Rainbow Group, Computer Laboratory, University of Cambridge. The founder of the project and main developer is Tadas Baltrušaitis.
 
 ## Functionality
 
@@ -44,7 +46,7 @@ The system is capable of performing a number of facial analysis tasks:
 
 ## Use
 
-[Command line](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
+[Command line interface](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
 
 GUI for Windows (Coming soon)
 
@@ -52,7 +54,7 @@ Messaging server (Coming soon)
 
 ## Citation
 
-If you use any of the resources provided on this page in any of your publications we ask you to cite the following work and the work for a relevant submodule you used.
+If you use any of the resources provided on this page in any of your publications we ask you to cite the following work and the work for a relevant submodule you used. 
 
 ### Overall system
 
@@ -79,12 +81,18 @@ Tadas Baltrušaitis, Marwa Mahmoud, and Peter Robinson
 in *Facial Expression Recognition and Analysis Challenge*, 
 *IEEE International Conference on Automatic Face and Gesture Recognition*, 2015 
 
+# Commercial license
+
+For inquiries about the commercial licensing of the OpenFace toolkit please contact innovation@cmu.edu
+
 # Final remarks
 
-I did my best to make sure that the code runs out of the box but there are always issues and I would be grateful for your understanding that this is research code and not a commercial level product. However, if you encounter any problems/bugs/issues please contact me on github for any bug reports/questions/suggestions. 
+I did my best to make sure that the code runs out of the box but there are always issues and I would be grateful for your understanding that this is research code and not full fledged product. However, if you encounter any problems/bugs/issues please contact me on github or by emailing me at Tadas.Baltrusaitis@cl.cam.ac.uk for any bug reports/questions/suggestions. I prefer questions and bug reports on github as that provides visibility to others who might be encountering same issues or who have the same questions.
 
 # Copyright
 
 Copyright can be found in the Copyright.txt
 
 You have to respect boost, TBB, dlib, OpenBLAS, and OpenCV licenses.
+
+Furthermore you have to respect the licenses of the datasets used for model training - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Datasets

@@ -11,12 +11,12 @@ You can find more details about FACS and AUs [here](https://en.wikipedia.org/wik
 ## Intensity and presence of AUs
 
 AUs can be described in two ways
-- Presence - if AU is visible in the face (for example AU01_c
+- Presence - if AU is visible in the face (for example AU01_c)
 - Intensity - how intense is the AU (minimal to maximal) on a 5 point scale
 
 OpenFace provides both of these scores. For presence of AU 1 the column `AU01_c` in the output file would encode 0 as not present and 1 as present. For intensity of AU 1 the column `AU01_r` in the output file would range from 0 (not present), 1 (present at minimum intensity), 5 (present at maximum intensity), with continuous values in between.
 
-Note that the intensity and presence predictors have been trained separately and on slightly different datasets, this means that the predictions of both might not always be consistent (e.g. the presence model could be predicting AU as not being present, but the intensity model could be predicting its value above 1).
+NOTE that the intensity and presence predictors have been trained separately and on slightly different datasets, this means that the predictions of both might not always be consistent (e.g. the presence model could be predicting AU as not being present, but the intensity model could be predicting its value above 1).
 
 ## Extraction from images and extraction from videos
 

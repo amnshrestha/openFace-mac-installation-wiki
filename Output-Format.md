@@ -1,98 +1,8 @@
-The two main projects that provide output files (that are not just videos) are **FaceLandmarkImg** and **FeatureExtraction** and their output is explained in detail in this page
+The two projects that process data are **FaceLandmarkImg** and **FeatureExtraction** and their output is explained in detail in this page. **FaceLandmarkImg** is intended for individual images and **FeatureExtraction** for sequence analysis (image sequence/webcam/video). Their output format is the same with the exception that **FeatureExtraction** assumes that there is only one face in the sequence, so each data row/observation corresponds to a frame, while **FaceLandmarkImg** can process multiple faces in the same image and each data row/observation corresponds to a face.
 
-## FaceLandmarkImg
+## CSV file
 
-The detected landmarks in an image are output in a text file, with a postfix `_det_n` if there are multiple faces in an image:
-
-    version: 1
-    npoints: 68
-    {
-    603.825 193.492
-    604.934 209.987
-    ...
-    662.5 252.346
-    654.784 251.901
-    }
-    pose: eul_x, eul_y, eul_z: 
-    {
-    0.396767 0.773298 -0.10933
-    }
-    gaze: dir_x_1, dir_y_1, dir_z_1, dir_x_2, dir_y_2, dir_z_2: 
-    {
-    0 0 -1 0 0 -1
-    }
-    gaze: angle_x, angle_y:
-    {
-    0 0
-    }
-    eye_lmks: 56
-    {
-    603.825 193.492
-    604.934 209.987
-    ...
-    662.5 252.346
-    654.784 251.901	
-    }
-    au intensities: 17
-    {
-    AU01 0
-    AU02 0
-    ...
-    AU45 4.1
-    }
-    au occurences: 18
-    {
-    AU01 0
-    AU02 0
-    ...
-    AU28 0
-    AU45 1
-    }
-Each line in `npoints` corresponds to a facial landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
-
-<img src="http://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg" height="400" width="400" >
-
-Line in `pose` corresponds to head orientation in Euler angles. 
-
-Gaze and eye features are only available if `-gaze` flag is set in command line arguments or `det_parameters.track_gaze = true` in code.
-
-Line in `gaze: dir_x_1...` corresponds to eye gaze vectors for left and right eye.
-
-Line in `gaze: angle_x, angle_y` corresponds to eye gaze angle in world coordinate space in radians.
-
-Each line in `eye_lmks: 56` corresponds to an eye region landmark location in pixels `(x y)`, the landmark indices follow the following scheme:
-
-![Eye landmark markup](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/eye_lmk_markup.png)
-
-
-Lines in `au intensities` and `au occurrences` correspond to predicted Action Unit presence and intensities respectively. For more details see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units)
-
-If `-opdir <dir>` is specified then the format changes to:
-
-    version: 1
-    npoints: 68
-    {
-    -34.4666 11.5525 501.305
-    -35.9184 33.9751 502.034
-    -35.361 56.7779 503.278
-    ...
-    40.2726 77.8179 448.076
-    33.2769 76.5671 447.281
-    }
-    pose: eul_x, eul_y, eul_z: 
-    {
-    -0.193585 -0.0835944 0.0948636
-    }
-    gaze: dir_x_1, dir_y_1, dir_z_1, dir_x_2, dir_y_2, dir_z_2: 
-    {
-    0.0604244 0.125688 -0.990228 -0.137919 0.204113 -0.969183
-    }
-
-Where the landmarks are no longer in pixel values but in millimetres and we also report head pose and gaze (this however needs accurate estimates of `fx,fy,cx,cy`. This functionality is useful for batch image processing where the camera is the same and we want to know pose and gaze.
-
-## FeatureExtraction
-
-The main output of feature extraction is a comma separated value file with facial landmarks, head pose, facial action units and eye gaze. Its format is as follows:
+Part of OpenFace processing outputs a comma separated value file of the following format:
 
     frame, timestamp, confidence, success, gaze_0_x, gaze_0_y, gaze_0_z, gaze_1_x, gaze_1_y, gaze_1_z, pose_Tx, pose_Ty, pose_Tz, pose_Rx, pose_Ry, pose_Rz, x_0, x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_10, x_11, x_12, x_13, x_14, x_15, x_16, x_17, x_18, x_19, x_20, x_21, x_22, x_23, x_24, x_25, x_26, x_27, x_28, x_29, x_30, x_31, x_32, x_33, x_34, x_35, x_36, x_37, x_38, x_39, x_40, x_41, x_42, x_43, x_44, x_45, x_46, x_47, x_48, x_49, x_50, x_51, x_52, x_53, x_54, x_55, x_56, x_57, x_58, x_59, x_60, x_61, x_62, x_63, x_64, x_65, x_66, x_67, y_0, y_1, y_2, y_3, y_4, y_5, y_6, y_7, y_8, y_9, y_10, y_11, y_12, y_13, y_14, y_15, y_16, y_17, y_18, y_19, y_20, y_21, y_22, y_23, y_24, y_25, y_26, y_27, y_28, y_29, y_30, y_31, y_32, y_33, y_34, y_35, y_36, y_37, y_38, y_39, y_40, y_41, y_42, y_43, y_44, y_45, y_46, y_47, y_48, y_49, y_50, y_51, y_52, y_53, y_54, y_55, y_56, y_57, y_58, y_59, y_60, y_61, y_62, y_63, y_64, y_65, y_66, y_67, X_0, X_1, X_2, X_3, X_4, X_5, X_6, X_7, X_8, X_9, X_10, X_11, X_12, X_13, X_14, X_15, X_16, X_17, X_18, X_19, X_20, X_21, X_22, X_23, X_24, X_25, X_26, X_27, X_28, X_29, X_30, X_31, X_32, X_33, X_34, X_35, X_36, X_37, X_38, X_39, X_40, X_41, X_42, X_43, X_44, X_45, X_46, X_47, X_48, X_49, X_50, X_51, X_52, X_53, X_54, X_55, X_56, X_57, X_58, X_59, X_60, X_61, X_62, X_63, X_64, X_65, X_66, X_67, Y_0, Y_1, Y_2, Y_3, Y_4, Y_5, Y_6, Y_7, Y_8, Y_9, Y_10, Y_11, Y_12, Y_13, Y_14, Y_15, Y_16, Y_17, Y_18, Y_19, Y_20, Y_21, Y_22, Y_23, Y_24, Y_25, Y_26, Y_27, Y_28, Y_29, Y_30, Y_31, Y_32, Y_33, Y_34, Y_35, Y_36, Y_37, Y_38, Y_39, Y_40, Y_41, Y_42, Y_43, Y_44, Y_45, Y_46, Y_47, Y_48, Y_49, Y_50, Y_51, Y_52, Y_53, Y_54, Y_55, Y_56, Y_57, Y_58, Y_59, Y_60, Y_61, Y_62, Y_63, Y_64, Y_65, Y_66, Y_67, Z_0, Z_1, Z_2, Z_3, Z_4, Z_5, Z_6, Z_7, Z_8, Z_9, Z_10, Z_11, Z_12, Z_13, Z_14, Z_15, Z_16, Z_17, Z_18, Z_19, Z_20, Z_21, Z_22, Z_23, Z_24, Z_25, Z_26, Z_27, Z_28, Z_29, Z_30, Z_31, Z_32, Z_33, Z_34, Z_35, Z_36, Z_37, Z_38, Z_39, Z_40, Z_41, Z_42, Z_43, Z_44, Z_45, Z_46, Z_47, Z_48, Z_49, Z_50, Z_51, Z_52, Z_53, Z_54, Z_55, Z_56, Z_57, Z_58, Z_59, Z_60, Z_61, Z_62, Z_63, Z_64, Z_65, Z_66, Z_67, p_scale, p_rx, p_ry, p_rz, p_tx, p_ty, p_0, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9, p_10, p_11, p_12, p_13, p_14, p_15, p_16, p_17, p_18, p_19, p_20, p_21, p_22, p_23, p_24, p_25, p_26, p_27, p_28, p_29, p_30, p_31, p_32, p_33, AU01_r, AU02_r, AU04_r, AU05_r, AU06_r, AU09_r, AU10_r, AU12_r, AU14_r, AU15_r, AU17_r, AU20_r, AU25_r, AU26_r, AU04_c, AU12_c, AU15_c, AU23_c, AU28_c, AU45_c
     1, 0, 0.94848, 1, 0.10917, 0.147619, -0.983001, -0.166114, 0.136956, -0.97655, 21.184, -4.04434, 422.08, 0.0528253, -0.0474321, 0.0169401, 129.32, 129.568, 130.737, 132.621, 136.572, 143.131, 151.472, 161.39, 172.219, 182.459, 191.094, 198.564, 204.427, 208.15, 210.221, 211.544, 212.038, 137.679, 143.604, 151.613, 159.659, 166.93, 180.113, 187.491, 194.915, 202.123, 206.965, 173.757, 173.999, 174.255, 174.513, 164.595, 169.096, 173.678, 178.155, 182.141, 146.832, 151.662, 157.183, 161.887, 156.979, 151.443, 183.759, 188.823, 194.114, 198.327, 194.444, 189.226, 155.318, 162.665, 169.103, 173.317, 178.143, 183.948, 189.568, 183.938, 178.302, 173.212, 168.623, 162.257, 157.973, 168.889, 173.214, 178.095, 187.128, 178.053, 173.151, 168.76, 96.3795, 107.458, 118.622, 129.446, 139.556, 148.479, 155.831, 161.454, 163.038, 161.598, 156.413, 149.47, 140.829, 130.685, 119.815, 108.843, 97.7375, 88.3902, 83.379, 82.0184, 83.1791, 86.0683, 85.8879, 83.1019, 82.3679, 84.0608, 89.0695, 93.5734, 100.678, 107.762, 115.118, 120.167, 121.755, 123.095, 121.833, 120.453, 94.8765, 92.2265, 92.3677, 95.7136, 96.5624, 96.597, 95.9942, 92.5987, 92.7628, 95.4758, 96.9835, 96.9262, 133.507, 131.346, 130.399, 131.494, 130.532, 131.774, 133.82, 138.237, 140.029, 140.445, 140.003, 138.113, 133.83, 133.706, 134.202, 133.716, 134.111, 135.027, 135.524, 135.051, -58.3457, -57.8686, -55.7015, -52.0705, -44.2213, -31.3873, -15.4704, 2.43908, 21.2727, 39.7591, 57.0255, 72.6207, 84.8269, 92.2786, 96.0504, 98.3322, 99.4596, -39.2106, -28.2826, -14.2539, -0.571417, 11.4866, 33.4085, 46.1934, 59.6174, 73.1567, 83.0303, 22.8051, 22.7966, 22.7769, 22.7809, 7.55478, 14.8233, 22.1575, 29.6144, 36.4299, -22.7817, -14.3064, -4.82294, 3.22773, -5.15778, -14.6417, 40.7882, 49.5531, 58.8734, 66.6969, 59.3376, 50.1574, -8.06112, 4.43767, 14.947, 21.8374, 29.8506, 40.1354, 51.1408, 40.0907, 30.0283, 21.5851, 14.1216, 3.76024, -3.46833, 14.6581, 21.7447, 29.9099, 46.5786, 29.7515, 21.5704, 14.4138, -44.9202, -23.849, -2.62326, 17.9654, 36.9141, 52.9898, 65.0022, 72.7413, 74.9274, 73.6421, 66.7804, 55.4954, 39.7695, 20.4769, -0.353364, -21.2845, -42.5497, -55.527, -63.1692, -64.5493, -61.6804, -56.2403, -56.6602, -62.0003, -64.2568, -62.4176, -54.6825, -43.8063, -31.4651, -19.5541, -7.66358, 0.274791, 2.86038, 5.01436, 2.98958, 0.745632, -43.4648, -47.6557, -47.3021, -41.5453, -40.0151, -40.0447, -41.2118, -47.1081, -47.0056, -42.6776, -39.6515, -39.5986, 23.2559, 18.8953, 17.0763, 18.8488, 17.3286, 19.7329, 23.9027, 30.5422, 32.8614, 33.4028, 32.7583, 30.1806, 23.664, 22.6006, 23.3707, 22.6715, 24.2276, 24.7644, 25.4641, 24.7658, 475.436, 475.394, 475.868, 475.46, 471.895, 465.17, 453.538, 438.689, 435.239, 442.584, 458.493, 470.782, 477.338, 479.125, 478.136, 476.929, 477.818, 439.159, 431.236, 424.872, 418.787, 414.364, 415.25, 420.077, 426.875, 434.189, 441.978, 414.415, 407.107, 399.446, 392.419, 411.019, 407.402, 404.993, 407.801, 411.345, 432.512, 428.968, 427.96, 427.66, 426.826, 427.773, 429.186, 429.799, 431.446, 435.057, 430.685, 429.042, 430.446, 416.351, 410.516, 409.959, 411.321, 418.989, 432.401, 418.688, 410.179, 408.44, 409.407, 416.563, 427.753, 412.239, 411.386, 413.232, 429.244, 411.998, 410.066, 411.369, 0.579649, 0.0810897, -0.0438177, 0.0165988, 172.634, 117.523, 6.75643, 3.98344, -0.913317, 0.0951292, -7.52669, 9.41583, -0.982634, -0.479738, 1.05969, -0.755182, -1.9985, -0.206534, -2.59672, -0.208004, 0.222584, 0.116356, 0.133241, 0.994562, 0.0731596, -1.20472, -0.238291, -0.344064, -0.00294826, 0.0520344, -0.0141846, 0.030905, -0.269735, -0.0120041, 0.00161123, -0.00588343, 0.00292991, -0.0331269, -0.0246774, -0.0311158,0,0,0,0,0,0,0,0,0.552199,0,0.781291,0,0,0,0,1,0,0,0,0
@@ -108,7 +18,7 @@ The header specifies the meaning of each column. The explanation of each:
 
 **Basic**
 
-`frame` the number of the frame processed
+`frame/face` the number of the frame (in case of sequences) and the face (in case of individual images) processed
 
 `timestamp` the timer of video being processed in seconds
 
@@ -116,7 +26,7 @@ The header specifies the meaning of each column. The explanation of each:
 
 `success` is the track successful (is there a face in the frame or do we think we tracked it well)
 
-**Gaze**
+**Gaze related**
 
 `gaze_0_x, gaze_0_y, gaze_0_z` Eye gaze direction vector in world coordinates for eye 0 (normalized)
 
@@ -124,21 +34,31 @@ The header specifies the meaning of each column. The explanation of each:
 
 `gaze_angle_x, gaze_angle_y` Eye gaze direction in radians in world coordinates for both eyes and converted into more easy to use format than gaze vectors
 
-`eye_lmk_x_0, eye_lmk_x_1,... eye_lmk_x55, eye_lmk_y_1,... eye_lmk_y_55` location of 2D eye region landmarks in pixels. The landmark index can be found above
+`eye_lmk_x_0, eye_lmk_x_1,... eye_lmk_x55, eye_lmk_y_1,... eye_lmk_y_55` location of 2D eye region landmarks in pixels. The landmark index can be found below
+
+`eye_lmk_X_0, eye_lmk_X_1,... eye_lmk_X55, eye_lmk_Y_0,... eye_lmk_Z_55` location of 3D eye region landmarks in pixels. The landmark index can be found below
+
+![Eye landmark markup](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/eye_lmk_markup.png)
 
 **Pose**
 
 `pose_Tx, pose_Ty, pose_Tz` the location of the head with respect to camera in millimetre (positive Z is away from the camera)
 
-`pose_Rx, pose_Ry, pose_Rz` Rotation is in radians around X,Y,Z axes with the convention `R = Rx * Ry * Rz`, left-handed positive sign. This can be seen as pitch (Rx), yaw (Ry), and roll (Rz). The rotation can be either in world or camera coordinates (for visualisation we want rotation with respect to world coordinates). This is controlled by `world_coord <1/0>` flag
+`pose_Rx, pose_Ry, pose_Rz` Rotation is in radians around X,Y,Z axes with the convention `R = Rx * Ry * Rz`, left-handed positive sign. This can be seen as pitch (Rx), yaw (Ry), and roll (Rz). The rotation is in world coordinates with camera being the origin.
+
+Lines in `au intensities` and `au occurrences` correspond to predicted Action Unit presence and intensities respectively. For more details see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units)
+
+Where the landmarks are no longer in pixel values but in millimetres and we also report head pose and gaze (this however needs accurate estimates of `fx,fy,cx,cy`. This functionality is useful for batch image processing where the camera is the same and we want to know pose and gaze.
 
 **Landmarks locations in 2D**
 
-`x_0, x_1, ... x_66, x_67, y_0,...y_67`  location of 2D landmarks in pixels, the landmark index can be seen above (just subtract 1 to get from a Matlab to a C++ standard)
+`x_0, x_1, ... x_66, x_67, y_0,...y_67`  location of 2D landmarks in pixels, the landmark index can be seen below
 
 **Landmarks locations in 3D**
 
-`X_0, ... X_67, Y_0,...Y_67, Z_0,...Z_67`  location of 3D landmarks in millimetres, the landmark index can be seen above (just subtract 1 to get from a Matlab to a C++ standard). For this to be accurate need to have good estimates for `fx,fy,cx,cy`
+`X_0, ... X_67, Y_0,...Y_67, Z_0,...Z_67`  location of 3D landmarks in millimetres, the landmark index can be seen below. For this to be accurate need to have good estimates for `fx,fy,cx,cy`
+
+<img src="https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/imgs/landmark_scheme_68.png" height="400" width="400" >
 
 **Rigid and non-rigid shape parameters**
 
@@ -160,11 +80,11 @@ And the presense (0 absent, 1 present) of 18 AUs:
 
 `AU01_c, AU02_c, AU04_c, AU05_c, AU06_c, AU07_c, AU09_c, AU10_c, AU12_c, AU14_c, AU15_c, AU17_c, AU20_c, AU23_c, AU25_c, AU26_c, AU28_c, AU45_c`
 
-**Similarity aligned faces and HOG**
+## Similarity aligned face images and HOG binary files
 
 ![Sample aligned face and HOG image](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/appearance.png)
 
-The code also allows for extraction of aligned faces (left) and HOG features (right). The HOG features are written as a binary file (for space consideration) and can be read in using the `./matlab_runners/Demos/Read_HOG_files.m` script to Matlab, see `./matlab_runners/Demos/feature_extraction_demo_vid.m` for an example (only on Windows at the moment). Once the script is finished, the HOG features are stored in `hog_data` variable
+The executables also allow for extraction of aligned faces (left) and HOG features (right). The HOG features are written as a binary file (for space consideration) and can be read in using the `./matlab_runners/Demos/Read_HOG_files.m` script to Matlab, see `./matlab_runners/Demos/feature_extraction_demo_vid.m` for an example. Once the script is finished, the HOG features are stored in `hog_data` variable
 
 It is also possible to control the size of the similarity aligned faces, using the `-simsize <pixel width and height>` and `-simscale <scale>` command line arguments, you can get the following results:
 
@@ -179,3 +99,11 @@ Smaller scale - 0.5
 Larger output - size 200 px
 
 ![aligned face large output](https://github.com/TadasBaltrusaitis/OpenFace/blob/develop/imgs/frame_det_000001_200x200_0.7.bmp)
+
+## Visualization of tracking
+
+The executables also output the visualization of landmarks, head pose and eye gaze tracking as a video or an image.
+
+## Meta file
+
+Finally, a meta file is produced that contains the information about input and output.

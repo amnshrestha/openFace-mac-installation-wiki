@@ -1,7 +1,9 @@
 - `./lib`
    - `local` - the actual meat of the code where the relevant computer vision algorithms reside
       - `LandmarkDetector` - The CLNF, CLM and CLM-Z algorithms together with face tracking code
-      - `FaceAnalyser` - Facial Action Unit detection and some useful code for extracting features for facial analysis, also includes gaze tracking modules
+      - `FaceAnalyser` - Facial Action Unit detection and some useful code for extracting features for facial analysis
+	  - `GazeAnalyser` - Code for extracting eye gaze
+	  - `Utilities` - Utility code for image and video reading, result recording, result visualization, and rotation and image manipulation
    - `3rdParty` - place for 3rd party libraries
       - `boost` - prepackaged relevant parts of the boost library
       - `OpenCV3.1` - prepackaged OpenCV 3.1 library that is used extensively internally to provide support for basic computer vision functionallity
@@ -9,10 +11,10 @@
       - `tbb` - prepackaged tbb code, library files and dll's
 	  - `OpenBLAS` - prepackaged OpenBLAS code for fast matrix multiplication
 - `./exe` - the runner and executables that show how to use the libraries for facial expression and head pose tracking, these best demonstrate how to use the libraries
+   - `FeatureExtraction` - main workhorse executable for sequences - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
+   - `FaceLandmarkImg` - main workhorse executable for images - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
    - `FaceLandmarkVid` - running single person landmark detection and gaze extraction on videos on disk or from a webcam
-   - `FaceLandmarkImg` - running single or multi person landmark detection on images
    - `FaceLandmarkVidMulti` - tracking multiple faces in videos (from a webcam or disk)
-   - `FeatureExtraction` - main workhorse executable - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
 - `./matlab_runners` helper scripts for running the experiments and demos, see ./matlab_runners/readme.txt for more info
 - `./matlab_version` A Matlab version of parts of OpenFace together with some training code, more details in `./matlab_version/readme.txt`
 - `./Release` The created directory after compilation containing the desired executables for x86 architectures
