@@ -28,9 +28,9 @@ The header specifies the meaning of each column. The explanation of each:
 
 **Gaze related**
 
-`gaze_0_x, gaze_0_y, gaze_0_z` Eye gaze direction vector in world coordinates for eye 0 (normalized)
+`gaze_0_x, gaze_0_y, gaze_0_z` Eye gaze direction vector in world coordinates for eye 0 (normalized), eye 0 is the leftmost eye in the image
 
-`gaze_1_x, gaze_1_y, gaze_1_z` Eye gaze direction vector in world coordinates for eye 1 (normalized)
+`gaze_1_x, gaze_1_y, gaze_1_z` Eye gaze direction vector in world coordinates for eye 1 (normalized), eye 1 is the rightmost eye in the image
 
 `gaze_angle_x, gaze_angle_y` Eye gaze direction in radians in world coordinates for both eyes and converted into more easy to use format than gaze vectors
 
