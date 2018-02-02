@@ -187,7 +187,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     - for images:
 
-        `./bin/FaceLandmarkImg -fdir "../samples/" -ofdir "./demo_img/" -oidir "./demo_img/" -wild`
+        `./bin/FaceLandmarkImg -fdir "../samples/" -wild`
 
     - for multiple faces in videos:
 
@@ -195,7 +195,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     - for feature extraction (facial landmarks, head pose, AUs, gaze and HOG and similarity aligned faces):
 
-        `./bin/FeatureExtraction -rigid  -verbose -f "../samples/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned`
+        `./bin/FeatureExtraction -verbose -f "../samples/default.wmv"`
 
 # Troubleshooting
 
