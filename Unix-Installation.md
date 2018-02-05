@@ -32,7 +32,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     `sudo apt-get install libopenblas-dev liblapack-dev`
 
-4. OpenCV 3.1.0
+4. OpenCV 3.4.0
 
     4.1 Install OpenCV dependencies:
 
@@ -105,7 +105,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     `sudo apt-get install libopenblas-dev liblapack-dev`
 
-4. OpenCV 3.1.0
+4. OpenCV 3.4.0
 
     4.1 Install OpenCV dependencies:
 
@@ -113,7 +113,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
         sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev checkinstall
 
-    4.2 Download OpenCV 3.1.0 from https://github.com/opencv/opencv/archive/3.4.0.zip
+    4.2 Download OpenCV 3.4.0 from https://github.com/opencv/opencv/archive/3.4.0.zip
 
         wget https://github.com/opencv/opencv/archive/3.4.0.zip
 
