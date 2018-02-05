@@ -20,6 +20,8 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
 
 Boost versions above 1.65 might clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50. To install a particular version of boost follow - https://stackoverflow.com/questions/104322/how-do-you-install-boost-on-macos
 
+Alternatively, have a look at - https://github.com/TadasBaltrusaitis/OpenFace/issues/340
+
 ## Tweaks
 
 I needed to tell CMake where to find the OpenCV3 libraries.  At the time of writing, v2 is the default under Homebrew and is installed in the standard locations, so to use v3, you need to change the appropriate `find_package` line in CMakeLists.txt to give it a hint about where to look; something like:
