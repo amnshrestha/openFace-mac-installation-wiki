@@ -40,14 +40,14 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
         sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev checkinstall
 
-    4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip
+    4.2 Download OpenCV 3.4.0 from https://github.com/opencv/opencv/archive/3.4.0.zip
 
-        wget https://github.com/Itseez/opencv/archive/3.1.0.zip
+        wget https://github.com/opencv/opencv/archive/3.4.0.zip
 
     4.3 Unzip it and create a build folder:
 
-        sudo unzip 3.1.0.zip
-        cd opencv-3.1.0
+        sudo unzip 3.4.0.zip
+        cd opencv-3.4.0
         mkdir build
         cd build
 
@@ -113,14 +113,14 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
         sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev checkinstall
 
-    4.2 Download OpenCV 3.1.0 from https://github.com/Itseez/opencv/archive/3.1.0.zip
+    4.2 Download OpenCV 3.1.0 from https://github.com/opencv/opencv/archive/3.4.0.zip
 
-        wget https://github.com/Itseez/opencv/archive/3.1.0.zip
+        wget https://github.com/opencv/opencv/archive/3.4.0.zip
 
     4.3 Unzip it and create a build folder:
 
-        sudo unzip 3.1.0.zip
-        cd opencv-3.1.0
+        sudo unzip 3.4.0.zip
+        cd opencv-3.4.0
         mkdir build
         cd build
 
