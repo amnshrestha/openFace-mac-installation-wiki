@@ -48,7 +48,7 @@ The system is capable of performing a number of facial analysis tasks:
 
 [Command line interface](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
 
-GUI for Windows (Coming soon)
+GUI for Windows
 
 Messaging server (Coming soon)
 
