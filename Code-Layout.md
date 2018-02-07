@@ -1,12 +1,14 @@
 - `./lib`
    - `local` - the actual meat of the code where the relevant computer vision algorithms reside
+      - `CppInterop` - wrappers around C++ code for C# bindings
       - `LandmarkDetector` - The CLNF, CLM and CLM-Z algorithms together with face tracking code
       - `FaceAnalyser` - Facial Action Unit detection and some useful code for extracting features for facial analysis
 	  - `GazeAnalyser` - Code for extracting eye gaze
 	  - `Utilities` - Utility code for image and video reading, result recording, result visualization, and rotation and image manipulation
    - `3rdParty` - place for 3rd party libraries
       - `boost` - prepackaged relevant parts of the boost library
-      - `OpenCV3.1` - prepackaged OpenCV 3.1 library that is used extensively internally to provide support for basic computer vision functionallity
+      - `CameraEnumerator` - useful utility for listing and naming connected webcams
+      - `OpenCV3.4` - prepackaged OpenCV 3.4 library that is used extensively internally to provide support for basic computer vision functionallity
       - `dlib` - a header only dlib library (includes the face detector used for in-the-wild images)
       - `tbb` - prepackaged tbb code, library files and dll's
 	  - `OpenBLAS` - prepackaged OpenBLAS code for fast matrix multiplication
@@ -15,6 +17,11 @@
    - `FaceLandmarkImg` - main workhorse executable for images - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
    - `FaceLandmarkVid` - running single person landmark detection and gaze extraction on videos on disk or from a webcam
    - `FaceLandmarkVidMulti` - tracking multiple faces in videos (from a webcam or disk)
+   - `releases` - scripts for packaging the Windows binaries into a release
+- `./gui` - the Windows GUI executables
+   - `HeadPose-live` - tracking and recording head pose, very specialist use
+   - `OpenFaceDemo` - nice visualization of OpenFace results from a webcam
+   - `OpenFaceOffline` - GUI for processing videos, image sequences, collections of images and webcam feeds, same functionallity as that of `FeatureExtraction`
 - `./matlab_runners` helper scripts for running the experiments and demos, see ./matlab_runners/readme.txt for more info
 - `./matlab_version` A Matlab version of parts of OpenFace together with some training code, more details in `./matlab_version/readme.txt`
 - `./Release` The created directory after compilation containing the desired executables for x86 architectures
