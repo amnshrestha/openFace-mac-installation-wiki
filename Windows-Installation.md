@@ -30,8 +30,10 @@ To test if the system compiled correctly or to test binaries go to `matlab_runne
 
 Alternatively if you don't have Matlab try these command line arguments from `Release` directory (add extra `../` if running from `x64/Release/`:
 
-- `FaceLandmarkImg.exe -wild -fdir "../samples/" -ofdir "../matlab_runners/demo_img/" -oidir "../matlab_runners/demo_img/"`
+- `FaceLandmarkImg.exe -wild -fdir "../samples/" -verbose`
 
 - `FaceTrackingVid.exe -f "../samples/changeLighting.wmv" -f "../samples/default.wmv"`
+
+- `FeatureExtraction.exe -f "../samples/changeLighting.wmv" -verbose`
 
 See [command line arguments](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments) for more details of how to use the binaries
