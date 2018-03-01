@@ -16,7 +16,7 @@ This requires cmake, OpenCV 3.1.0 (or newer), tbb and boost.
 
 To acquire all of the dependencies follow the instructions pertaining to your Operating System:
 
-### Ubuntu 14.04
+### Ubuntu gcc compiler instructions
 
 1. Get newest GCC, done using:
 
@@ -65,7 +65,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     alternatively: `sudo apt-get install libboost-all-dev`
 
-### Ubuntu 15.10
+### Ubuntu clang compiler instructions
 
 1. Get LLVM, Clang and libc++:
 
@@ -95,7 +95,7 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
     * Get Clang and libc++:
 
-      `sudo apt-get install clang-3.7 libc++-dev libc++abi-dev`
+      `sudo apt-get install clang libc++-dev libc++abi-dev`
 
 2. Get Cmake:
 

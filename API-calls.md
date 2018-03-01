@@ -13,21 +13,21 @@ The best way to understand how landmark detection is performed in videos or imag
 A minimal code example for landmark detection in an individual image is as follows:
 
     LandmarkDetector::FaceModelParameters det_parameters;
-    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);
+    LandmarkDetector::CLNF face_model(det_parameters.model_location);
     
-    LandmarkDetector::DetectLandmarksInImage(grayscale_image, clnf_model, det_parameters);
+    LandmarkDetector::DetectLandmarksInImage(grayscale_image, face_model, det_parameters);
 
 You can also provide your own face detection to detect landmarks of a particular face in the image (example using a modified dlib face detector):
 
     LandmarkDetector::FaceModelParameters det_parameters;
-    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);
+    LandmarkDetector::CLNF face_model(det_parameters.model_location);
 	dlib::frontal_face_detector face_detector_hog = dlib::get_frontal_face_detector();
 
     double confidence;
     cv::Rect_<double> bounding_box;
-    bool face_detection_success = LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, clnf_model.face_detector_HOG, confidence);
+    bool face_detection_success = LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, face_model.face_detector_HOG, confidence);
 
-    LandmarkDetector::DetectLandmarksInImage(grayscale_image, bounding_box, clnf_model, det_parameters);
+    LandmarkDetector::DetectLandmarksInImage(grayscale_image, bounding_box, face_model, det_parameters);
 
 Note that the bounding box has to be around the 68 landmarks being detected, so just calling an external face detector without adapting the bounding box might lead to suboptimal results.
 	
@@ -36,28 +36,28 @@ Note that the bounding box has to be around the 68 landmarks being detected, so 
 A minimal pseudo code example for landmark tracking is as follows:
 
     LandmarkDetector::FaceModelParameters det_parameters;
-    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);	
+    LandmarkDetector::CLNF face_model(det_parameters.model_location);	
 
     while(video)
     {
-        LandmarkDetector::DetectLandmarksInVideo(grayscale_image, clnf_model, det_parameters);
+        LandmarkDetector::DetectLandmarksInVideo(grayscale_image, face_model, det_parameters);
     }
 
 OpenFace provides a utility function that allows to read videos/image sequences/webcam in a single interface. Have a look at `Utilities::SequenceCapture`
 	
 ### Landmark results	
 	
-After landmark detection is done `clnf_model` stores the landmark locations and local and global Point Distribution Model parameters inferred from the image. To access them and more use:
+After landmark detection is done `face_model` stores the landmark locations and local and global Point Distribution Model parameters inferred from the image. To access them and more use:
 
 - 2D landmark location (in image):
 
-   `clnf_model.detected_landmarks` contains a double matrix in following format `[x1;x2;...xn;y1;y2...yn]` describing the detected landmark locations in the image
+   `face_model.detected_landmarks` contains a double matrix in following format `[x1;x2;...xn;y1;y2...yn]` describing the detected landmark locations in the image
 - 3D landmark location in world space:
 
-	`clnf_model.GetShape(fx, fy, cx, cy);` This returns a column matrix with the following format `[X1;X2;...Xn;Y1;Y2;...Yn;Z1;Z2;...Zn]`, here every element is in millimeters and represents the facial landmark locations with respect to camera (you need to know camera focal length and optical centre `fx,fy,cx,cy` for this)
+	`face_model.GetShape(fx, fy, cx, cy);` This returns a column matrix with the following format `[X1;X2;...Xn;Y1;Y2;...Yn;Z1;Z2;...Zn]`, here every element is in millimeters and represents the facial landmark locations with respect to camera (you need to know camera focal length and optical centre `fx,fy,cx,cy` for this)
 - 3D landmark location in object space:
 
-	`clnf_model.pdm.CalcShape3D(landmarks_3D, clnf_model.params_local);`
+	`face_model.pdm.CalcShape3D(landmarks_3D, face_model.params_local);`
 
 ### Head pose tracking
 
@@ -73,11 +73,11 @@ To extract eye gaze you will need to have facial landmarks detected using a `Lan
 A minimal pseudo code example of tracking eye gaze vectors (direction vectors in the direction of eye gaze as measured from the eye location)
 
     LandmarkDetector::FaceModelParameters det_parameters;
-    LandmarkDetector::CLNF clnf_model(det_parameters.model_location);	
+    LandmarkDetector::CLNF face_model(det_parameters.model_location);	
 
     while(video)
     {
-        bool success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, clnf_model, det_parameters);
+        bool success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, face_model, det_parameters);
 				
         cv::Point3f gazeDirection0(0, 0, -1);
         cv::Point3f gazeDirection1(0, 0, -1);
@@ -85,8 +85,8 @@ A minimal pseudo code example of tracking eye gaze vectors (direction vectors in
 
         if (success && det_parameters.track_gaze)
         {
-            GazeAnalysis::EstimateGaze(clnf_model, gazeDirection0, fx, fy, cx, cy, true);
-            GazeAnalysis::EstimateGaze(clnf_model, gazeDirection1, fx, fy, cx, cy, false);
+            GazeAnalysis::EstimateGaze(face_model, gazeDirection0, fx, fy, cx, cy, true);
+            GazeAnalysis::EstimateGaze(face_model, gazeDirection1, fx, fy, cx, cy, false);
 			gazeAngle = GazeAnalysis::GetGazeAngle(gazeDirection0, gazeDirection1, pose_estimate);
         }
     }
@@ -108,8 +108,8 @@ To extract AUs from an image:
 	face_analysis_params.OptimizeForImages();	
     FaceAnalysis::FaceAnalyser face_analyser(face_analysis_params);
 
-    bool success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, clnf_model, det_parameters);
-    face_analyser.PredictStaticAUsAndComputeFeatures(captured_image, clnf_model.detected_landmarks);
+    bool success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, face_model, det_parameters);
+    face_analyser.PredictStaticAUsAndComputeFeatures(captured_image, face_model.detected_landmarks);
 
 	auto aus_intensity = face_analyser.GetCurrentAUsReg();
 	auto aus_presence = face_analyser.GetCurrentAUsClass();

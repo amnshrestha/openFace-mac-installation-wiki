@@ -1,4 +1,4 @@
-The two projects that process data are **FaceLandmarkImg** and **FeatureExtraction** and their output is explained in detail in this page. **FaceLandmarkImg** is intended for individual images and **FeatureExtraction** for sequence analysis (image sequence/webcam/video). Their output format is the same with the exception that **FeatureExtraction** assumes that there is only one face in the sequence, so each data row/observation corresponds to a frame, while **FaceLandmarkImg** can process multiple faces in the same image and each data row/observation corresponds to a face.
+The two projects that process data are **FaceLandmarkImg** and **FeatureExtraction** and their output is explained in detail in this page. **FaceLandmarkImg** is intended for individual images and **FeatureExtraction** for sequence (image sequence/webcam/video) analysis that contain a single face, while **FaceLandmarkVidMulti** is intended for sequences containing multiple faces. Their output format is the same.
 
 ## CSV file
 
@@ -18,9 +18,11 @@ The header specifies the meaning of each column. The explanation of each:
 
 **Basic**
 
-`frame/face` the number of the frame (in case of sequences) and the face (in case of individual images) processed
+`frame` the number of the frame (in case of sequences)
 
-`timestamp` the timer of video being processed in seconds
+`face_id` the face id (in case of multiple faces), there is no guarantee that this is consistent across frames in case of `FaceLandmarkVidMulti`, especially in longer sequences
+
+`timestamp` the timer of video being processed in seconds (in case of sequences)
 
 `confidence` how confident is the tracker in current landmark detection estimage
 
@@ -72,6 +74,8 @@ Parameters of a point distribution model (PDM) that describe the rigid face shap
 
 Facial Action Units (AUs) are a way to describe human facial expression, more details on Action Units can be found [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units)
 
+Note that AUs are most accurate in videos of one person if there is a range of expressions observed, they are not as accurate with `FaceLandmarkImg` and `FaceLandmarkVidMulti`
+
 The system can detect the intensity (from 0 to 5) of 17 AUs:
 
 `AU01_r, AU02_r, AU04_r, AU05_r, AU06_r, AU07_r, AU09_r, AU10_r, AU12_r, AU14_r, AU15_r, AU17_r, AU20_r, AU23_r, AU25_r, AU26_r, AU45_r`
@@ -99,6 +103,16 @@ Smaller scale - 0.5
 Larger output - size 200 px
 
 ![aligned face large output](https://github.com/TadasBaltrusaitis/OpenFace/blob/develop/imgs/frame_det_000001_200x200_0.7.bmp)
+
+Finally it is possible to turn off the masking of the output aligned image using the `-nomask` command in command line. 
+
+Aligned image with a mask:
+
+![No mask](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/aligned_mask.bmp)
+
+Aligned image without a mask (`-nomask`):
+![Width mask](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/aligned_no_mask.bmp)
+
 
 ## Visualization of tracking
 

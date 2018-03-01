@@ -1,19 +1,27 @@
-# Exaple uses
+# Example uses
 
 One way of interacting with OpenFace is through command line arguments (e.g. Command Prompt or PowerShell in Windows and xterm on Unix systems). For this you need to first compile the OpenFace code or download the executables (for Windows).
 
-`FeatureExtraction` executable is used for sequence analysis, while `FaceLandmarkImg` executable is for individual image analysis. Some common example uses are outlined below. For Ubuntu or Mac OS X omit the `.exe`. For the commands to work the current directory has to be in the same directory as the executables, or you need to specify the full path to the executable.
+`FeatureExtraction` executable is used for sequence analysis that contain a single face, `FaceLandmarkVidMulti` is intended for sequence analysis that contain multiple faces, and `FaceLandmarkImg` executable is for individual image analysis (can either contain one or more faces). Some common example uses are outlined below. For Ubuntu or Mac OS X omit the `.exe`. For the commands to work the current directory has to be in the same directory as the executables, or you need to specify the full path to the executable.
 
 If you want to extract OpenFace features (by features we refer to all the features extracted by OpenFace: facial landmarks, head pose, eye gaze, facial action units, similarity aligned faces, and HOG) from a **video** file in location `C:\my videos\video.avi`, assuming that only one person appears in that video file, execute the following command on the command line:
 
     FeatureExtraction.exe -f "C:\my videos\video.avi"
 
-This will create a `processed` directory in the same directory (working directory) as `FeatureExtraction` that will contain the processed features (more [details](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format)).
+If there are multiple people in the video use:
+
+    FaceLandmarkVidMulti.exe -f "C:\my videos\video.avi"
+	
+This will create a `processed` directory in the same directory (working directory) as `FeatureExtraction` or `FaceLandmarkVidMulti` that will contain the processed features (more [details](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format)).
 
 If you want to extract OpenFace features from multiple video files, e.g. `C:\my videos\video1.avi`, `C:\my videos\video2.avi`, `C:\my videos\video3.avi`, execute the following command on the command line:
 
     FeatureExtraction.exe -f "C:\my videos\video1.avi" -f "C:\my videos\video2.avi" -f "C:\my videos\video3.avi"
 
+or 
+
+    FaceLandmarkVidMulti.exe -f "C:\my videos\video1.avi" -f "C:\my videos\video2.avi" -f "C:\my videos\video3.avi"
+	
 If you only want to extract head pose from the video file in `C:\my videos\video1.avi`, execute the following command on the command line:
 
     FeatureExtraction.exe -f "C:\my videos\video1.avi" -pose
@@ -22,13 +30,17 @@ If instead of a video file you have a **sequence of images** in a directory with
 
     FeatureExtraction.exe -fdir "C:\my videos\sequence1"
 
+or 
+
+    FaceLandmarkVidMulti.exe -fdir "C:\my videos\sequence1"
+
 If you want to extract OpenFace features from an **image** file in location `C:\my images\img.jpg` (can contain multiple people), execute the following command on the command line:
 
     FaceLandmarkImg.exe -f "C:\my images\img.jpg"
 
 This will create a `processed` directory in the same directory (working directory) as `FaceLandmarkImg` that will contain the processed features (more [details](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format) ).
 
-If you want to extract OpenFace features from multiple video files, e.g. `C:\my images\img1.jpg`, `C:\my images\img2.jpg`, `C:\my images\img3.jpg`, execute the following command on the command line:
+If you want to extract OpenFace features from multiple image files, e.g. `C:\my images\img1.jpg`, `C:\my images\img2.jpg`, `C:\my images\img3.jpg`, execute the following command on the command line:
 
     FaceLandmarkImg.exe -f "C:\my images\img1.jpg" -f "C:\my images\img2.jpg" -f "C:\my images\img3.jpg"
 
@@ -66,7 +78,7 @@ Another good way to see how the command line arguments work is through looking a
 
 For more details on output format see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format#facelandmarkimg)
 
-## FeatureExtraction
+## FeatureExtraction and FaceLandmarkVidMulti
 
 **Input parameters**
 
@@ -76,11 +88,15 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 
    `-device <device id>` the device id of a webcam to perform feature extraction from a live feed
    
+   `-cam_width` <resolution in x> the input webcam witch resolution (default 640), only valid if device is set
+
+   `-cam_height` <resolution in x> the input webcam height resolution (default 480), only valid if device is set
+   
    `-root <dir>` the root for input
 
    `-inroot <dir>` the root for input
 
-   `-au_static` if this flag is specified the AU prediction will be performed as if on static images rather than videos, see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units#static-vs-dynamic) for a more detailed explanation
+   `-au_static` if this flag is specified the AU prediction will be performed as if on static images rather than videos, see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Action-Units#static-vs-dynamic) for a more detailed explanation, this is the default behavior for FaceLandmarkVidMulti
 	
 **Parameters for output (for more details on output format see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Output-Format#featureextraction))**
 
@@ -91,7 +107,7 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
    `-oc <FOURCC_CODE>` the codec of the output video file (list of FOURCC codes can be found here - https://www.fourcc.org/codecs.php)
  
  
-**Additional parameters for output**
+**Additional parameters for output (applicable for both FaceLandmarkImg and FeatureExtraction)**
 	
    `-verbose` visualise the processing steps live: tracked face with gaze, similarity aligned face, and HOG feaures (not visualized by default), this flag turns all of them on, below flags allow for more fine-grained control
 
@@ -106,6 +122,8 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
    `-simscale <float>` scale of the face for similarity alignment (default 0.7)
 
    `-simsize <int>` width and height of image in pixels when similarity aligned (default 112)
+   
+   `-nomask` forces the aligned face output images to not be masked out
 
    `-g` output images should be grayscale (for saving space)
 
@@ -129,13 +147,17 @@ By default the executable will output all features (tracked videos, HOG files, s
 
    `-tracked` output video with detected landmarks
 
-## FaceLandmarkVid and FaceLandmarkVidMulti
+## FaceLandmarkVid
 
 **Parameters for input**
 
    `-f <filename>` the video file being input, can specify multiple files by having multiple `-f` flags
 
    `-device <device_num>` the webcam from which to read images (default 0)
+   
+   `-cam_width` <resolution in x> the input webcam witch resolution (default 640)
+
+   `-cam_height` <resolution in x> the input webcam height resolution (default 480)
 
    `-inroot <directory>` the root of input so `-f` can be specified relative to it
    

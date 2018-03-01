@@ -16,7 +16,7 @@
    - `FeatureExtraction` - main workhorse executable for sequences - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
    - `FaceLandmarkImg` - main workhorse executable for images - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
    - `FaceLandmarkVid` - running single person landmark detection and gaze extraction on videos on disk or from a webcam
-   - `FaceLandmarkVidMulti` - tracking multiple faces in videos (from a webcam or disk)
+   - `FaceLandmarkVidMulti` - tracking multiple faces in sequences (from a webcam, video file or an image sequene)
    - `releases` - scripts for packaging the Windows binaries into a release
 - `./gui` - the Windows GUI executables
    - `HeadPose-live` - tracking and recording head pose, very specialist use

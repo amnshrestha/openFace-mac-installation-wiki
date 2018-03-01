@@ -30,6 +30,8 @@ Use `FaceLandmarkImg` project and executable for this, it will output AU predict
 
 If you want to extract facial action units from image sequence or a video you should use `FeatureExtraction` project and executable for this. This will provide AU presence and intensity predictions for each frame in a video.
 
+If you want to extract facial action units from videos that contain multiple faces you should use `FaceLandmarkVidMulti` project. NOTE that the extracted AUs will not be as reliable as in the single person in the video case, due to person specific feature calibration and post-processing which is currently not supported in multi-face case.
+
 ### Static vs dynamic
 
 OpenFace uses two types of AU prediction models - `static` and `dynamic`. The `static` models only rely on a single image to make an estimate of AU presence or intensity, while `dynamic` ones calibrate to a person by performing person normalization in the video, they also attempt to correct for over and under prediction of AUs. By default OpenFace uses static models on images and dynamic models on image sequences and videos.
