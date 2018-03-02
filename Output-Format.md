@@ -111,6 +111,7 @@ Aligned image with a mask:
 ![No mask](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/aligned_mask.bmp)
 
 Aligned image without a mask (`-nomask`):
+
 ![Width mask](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/aligned_no_mask.bmp)
 
 
