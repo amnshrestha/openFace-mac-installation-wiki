@@ -109,13 +109,15 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
  
 **Additional parameters for output (applicable for both FaceLandmarkImg and FeatureExtraction)**
 	
-   `-verbose` visualise the processing steps live: tracked face with gaze, similarity aligned face, and HOG feaures (not visualized by default), this flag turns all of them on, below flags allow for more fine-grained control
+   `-verbose` visualise the processing steps live: tracked face with gaze, action units, similarity aligned face, and HOG features (not visualized by default), this flag turns all of them on, below flags allow for more fine-grained control. Visualizing these outputs will reduce processing speeds, potentially by a significant amount.
 
    `-vis-track` visualise the tracked face
 
    `-vis-hog` visualise the HOG features
 
    `-vis-align` visualise similarity aligned faces
+
+   `-vis-aus` visualise Action Units
 
    `-q` supress any live visualisation (this supresses all the other visualization flags)
 
