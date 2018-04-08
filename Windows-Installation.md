@@ -1,8 +1,8 @@
 # Binaries
 
 Windows binaries can be found here:
-- 32-bit [https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_v1.0.0_win_x86.zip](https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_vv1.0.0/OpenFace_v1.0.0_win_x86.zip)
-- 64-bit [https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_v1.0.0_win_x64.zip](https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_v1.0.0_win_x64.zip)
+- 32-bit [https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_v1.0.0_win_x86.zip](https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_1.0.0_win_x86.zip)
+- 64-bit [https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_v1.0.0_win_x64.zip](https://github.com/TadasBaltrusaitis/OpenFace/releases/download/OpenFace_v1.0.0/OpenFace_1.0.0_win_x64.zip)
 
 For the binaries to work you need to have Visual Studio 2015 installed or need to install the 64-bit Visual C++ redistributable package, that can be found [here](https://www.microsoft.com/en-us/download/details.aspx?id=52685).
 
