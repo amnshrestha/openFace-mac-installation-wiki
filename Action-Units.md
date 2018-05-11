@@ -16,19 +16,21 @@ AUs can be described in two ways
 
 OpenFace provides both of these scores. For presence of AU 1 the column `AU01_c` in the output file would encode 0 as not present and 1 as present. For intensity of AU 1 the column `AU01_r` in the output file would range from 0 (not present), 1 (present at minimum intensity), 5 (present at maximum intensity), with continuous values in between.
 
-NOTE that the intensity and presence predictors have been trained separately and on slightly different datasets, this means that the predictions of both might not always be consistent (e.g. the presence model could be predicting AU as not being present, but the intensity model could be predicting its value above 1).
+*NOTE* that the intensity and presence predictors have been trained separately and on slightly different datasets, this means that the predictions of both might not always be consistent (e.g. the presence model could be predicting AU as not being present, but the intensity model could be predicting its value above 1).
 
 ## Extraction from images and extraction from videos
 
-OpenFace is able to extract Action Units both from images, image sequences and videos
+OpenFace is able to extract Action Units both from images, image sequences and videos. It can also do it in videos containing multiple people, however, this will not be as accurate as running it on a video of a single person. This is because OpenFace is not able to re-identify people in videos and person specific calibration is not performed.
 
 ### Individual Images
 
 Use `FaceLandmarkImg` project and executable for this, it will output AU predictions for each image. Please note that the accuracy of AU prediction on individual images is not as high as that of AU prediction on videos because videos allow for person specific calibration. For more details of how to perform the extraction see [here](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Command-line-arguments)
 
-### Image sequences and videos
+### Image sequences and videos containing one person
 
 If you want to extract facial action units from image sequence or a video you should use `FeatureExtraction` project and executable for this. This will provide AU presence and intensity predictions for each frame in a video.
+
+### Multiple person videos
 
 If you want to extract facial action units from videos that contain multiple faces you should use `FaceLandmarkVidMulti` project. NOTE that the extracted AUs will not be as reliable as in the single person in the video case, due to person specific feature calibration and post-processing which is currently not supported in multi-face case.
 

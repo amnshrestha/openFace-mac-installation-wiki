@@ -1,7 +1,7 @@
 - `./lib`
    - `local` - the actual meat of the code where the relevant computer vision algorithms reside
       - `CppInterop` - wrappers around C++ code for C# bindings
-      - `LandmarkDetector` - The CLNF, CLM and CLM-Z algorithms together with face tracking code
+      - `LandmarkDetector` - The CE-CLM, CLNF, and CLM algorithms together with face tracking code
       - `FaceAnalyser` - Facial Action Unit detection and some useful code for extracting features for facial analysis
 	  - `GazeAnalyser` - Code for extracting eye gaze
 	  - `Utilities` - Utility code for image and video reading, result recording, result visualization, and rotation and image manipulation
@@ -16,7 +16,7 @@
    - `FeatureExtraction` - main workhorse executable for sequences - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
    - `FaceLandmarkImg` - main workhorse executable for images - extracting all supported features from faces: landmarks, AUs, head pose, gaze, similarity normalised faces and HOG features
    - `FaceLandmarkVid` - running single person landmark detection and gaze extraction on videos on disk or from a webcam
-   - `FaceLandmarkVidMulti` - tracking multiple faces in sequences (from a webcam, video file or an image sequene)
+   - `FaceLandmarkVidMulti` - tracking multiple faces in sequences and extracting their features (from a webcam, video file or an image sequene)
    - `releases` - scripts for packaging the Windows binaries into a release
 - `./gui` - the Windows GUI executables
    - `HeadPose-live` - tracking and recording head pose, very specialist use

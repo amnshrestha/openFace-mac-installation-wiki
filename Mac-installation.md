@@ -1,8 +1,12 @@
+*NOTE* I don't have a Mac to easily test and amend these instructions, but a lot of people managed to get it working. If anyone wants to edit the wiki with better and more up to date Mac instructions please do!
+
 # Mac installation
 
 Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.4.  Your needs may differ depending on what you already have installed, but the following may help.
 
 ## Prerequisites
+
+* The landmark detection model is not included due to file size, you can download it using the `download_models.sh` script. For more details see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
 
 * I recommend installing [Homebrew](http://brew.sh) as the easiest way to get a variety of Open Source libraries.  Think of it as the Mac equivalent of `apt-get`.  Homebrew usually installs things under `/usr/local/Cellar` and then creates links to the version you're using in `/usr/local/bin`, `/usr/local/lib` etc.  This will be relevant later.
 
@@ -17,6 +21,8 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
     `brew install tbb opencv3`
 
     `brew install boost`
+
+    `brew install openblas`
 
 You can also compile OpenCV from code directly.
 

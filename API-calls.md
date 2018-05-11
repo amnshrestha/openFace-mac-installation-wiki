@@ -15,7 +15,9 @@ A minimal code example for landmark detection in an individual image is as follo
     LandmarkDetector::FaceModelParameters det_parameters;
     LandmarkDetector::CLNF face_model(det_parameters.model_location);
     
-    LandmarkDetector::DetectLandmarksInImage(grayscale_image, face_model, det_parameters);
+    LandmarkDetector::DetectLandmarksInImage(rgb_image, face_model, det_parameters, grayscale_image);
+
+In this example `rgb_image` is a `cv::Mat` with a three channel `UINT8` pixel image and `grayscale_image` is a `cv::Mat_<uchar>`. The `grayscale_image` parameter is optional and will be ignored if not provided. 
 
 You can also provide your own face detection to detect landmarks of a particular face in the image (example using a modified dlib face detector):
 
@@ -27,7 +29,7 @@ You can also provide your own face detection to detect landmarks of a particular
     cv::Rect_<double> bounding_box;
     bool face_detection_success = LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, face_model.face_detector_HOG, confidence);
 
-    LandmarkDetector::DetectLandmarksInImage(grayscale_image, bounding_box, face_model, det_parameters);
+    LandmarkDetector::DetectLandmarksInImage(rgb_image, bounding_box, face_model, det_parameters, grayscale_image);
 
 Note that the bounding box has to be around the 68 landmarks being detected, so just calling an external face detector without adapting the bounding box might lead to suboptimal results.
 	
@@ -40,10 +42,10 @@ A minimal pseudo code example for landmark tracking is as follows:
 
     while(video)
     {
-        LandmarkDetector::DetectLandmarksInVideo(grayscale_image, face_model, det_parameters);
+        LandmarkDetector::DetectLandmarksInVideo(rgb_image, face_model, det_parameters, grayscale_image);
     }
 
-OpenFace provides a utility function that allows to read videos/image sequences/webcam in a single interface. Have a look at `Utilities::SequenceCapture`
+OpenFace provides a utility function that allows to read videos/image sequences/webcam in a single interface. Have a look at `Utilities::SequenceCapture`. This also allows you to get `rgb_image` and `grayscale_image` in the right format. It also provides "guesstimates" of intrinsic camera parameters, such as `fx,fy,cx,cy` based on image size.
 	
 ### Landmark results	
 	
@@ -58,6 +60,14 @@ After landmark detection is done `face_model` stores the landmark locations and 
 - 3D landmark location in object space:
 
 	`face_model.pdm.CalcShape3D(landmarks_3D, face_model.params_local);`
+
+- 2D eye region landmark location (in image):
+
+	`LandmarkDetector::CalculateAllEyeLandmarks(face_model);` returns `vector<cv::Point2f>` containing the 2D eye region landmarks for both eyes
+	
+- 3D eye region landmark location in world space:	
+
+	`LandmarkDetector::Calculate3DEyeLandmarks(face_model, fx, fy, cx, cy));` returns `vector<cv::Point3f>` containing the 3D eye region landmarks for both eyes
 
 ### Head pose tracking
 

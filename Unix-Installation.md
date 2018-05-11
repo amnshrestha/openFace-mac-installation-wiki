@@ -1,6 +1,9 @@
 # Install script 
 
-On most systems you can install OpenFace using the `./install.sh` script, if that does not work, use the following steps.
+On most systems you can install OpenFace using the `download_models.sh` followed by `./install.sh` script, if that does not work, use the following steps.
+
+For more details on model downloads see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
+
 
 # Advanced Ubuntu installation
 

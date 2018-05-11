@@ -50,7 +50,7 @@ Alternatively, if you want to process all the images in the directory `C:\my ima
 
 This will process all of the images (.jpg, jpeg, .bmp, .png files) in the directory.
 
-NOTE, the difference between using `-fdir` flag between `FeatureExtraction` and `FaceLandmarkImg` is that `FeatureExtraction` assumes a sequence of images coming from a video that contains only one face, while `FaceLandmarkImg` assumes a random collection of images with no relationship between them, that can contain multiple faces.
+*NOTE*, the difference between using `-fdir` flag between `FeatureExtraction` and `FaceLandmarkImg` is that `FeatureExtraction` assumes a sequence of images coming from a video that contains only one face, while `FaceLandmarkImg` assumes a random collection of images with no relationship between them, that can contain multiple faces.
 
 Another good way to see how the command line arguments work is through looking at `./matlab_runners/Demos/` which illustrates how each of the models is called.
 
@@ -173,9 +173,11 @@ By default the executable will output all features (tracked videos, HOG files, s
 
   Options for this:
         
-- `"model/main_clnf_general.txt"` (default) - trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking (CLNF model)
-- `"model/main_clnf_wild.txt"` - trained on In-the-wild data, works better in noisy environments (not very well suited for head pose tracking),  (CLNF in-the-wild model)
-- `"model/main_clm_general.txt"` - a less accurate but slightly faster CLM model trained on Multi-PIE of varying pose and illumination and In-the-wild data, works well for head pose tracking
+- `"model/main_ceclm_general.txt"` (default) - trained on Multi-PIE of varying pose and illumination and In-the-wild data (300W and Menpo). Most accurate, but the slowest and most memory heavy method. Suitable for most conditions.
+- `"model/main_clnf_general.txt"` - trained on Multi-PIE of varying pose and illumination and In-the-wild data. Works well in a lot of conditions, but fails for profile faces and very large expressions
+- `"model/main_clnf_wild.txt"` - as above, but only trained on 300W datasets (Helen and LFPW)
+- `"model/main_clnf_multi_pie.txt"` - trained on CMU Multi-PIE dataset, works well in well lit environments
+- `"model/main_clm_general.txt"` - the least accurate. but the fastest model
 
 **Model parameters**
 
