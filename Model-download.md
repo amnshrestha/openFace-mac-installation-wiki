@@ -13,6 +13,6 @@ The above scripts will download the models required to run the C++ code. For Mat
 
 To download the C++ and matlab models go to - https://www.dropbox.com/sh/o8g1530jle17spa/AADRntSHl_jLInmrmSwsX-Qsa?dl=0
 
-The C++ models have the `.dat` extension and should be place in the `lib\local\LandmarkDetector\model\patch_experts` folder.
+The C++ models have the `.dat` extension and should be place in the `lib\local\LandmarkDetector\model\patch_experts` folder if you are compiling form code, and in the `model\patch_experts` folder if you have downloaded the binaries.
 
 The Matlab models have the `.mat` extension and should be placed in the `.\matlab_version\models\cen` folder
