@@ -22,7 +22,7 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
 
     `brew install tbb opencv3`
 
-    `brew install boost`
+    `brew install boost@1.59`
 
     `brew install openblas`
 
