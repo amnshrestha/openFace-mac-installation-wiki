@@ -147,6 +147,8 @@ By default the executable will output all features (tracked videos, HOG files, s
    
    `-simalign` output similarity aligned images of the tracked faces
 
+   `-nobadaligned` if outputting similarity aligned images, do not output from frames where detection failed or is unreliable (thus saving some disk space)
+   
    `-tracked` output video with detected landmarks
 
 ## FaceLandmarkVid
