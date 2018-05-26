@@ -24,13 +24,19 @@ Here's what I did to get OpenFace running on my Mac under OS X El Capitan 10.11.
 
     `brew install boost@1.59`
 
-    `brew install openblas`
-
 You can also compile OpenCV from code directly.
 
 Boost versions above 1.65 might clash with the dlib version used in the code, in order to compile the code successfully you might need to downgrade to boost 1.50 (or above, but below 1.65). To install a particular version of boost follow - https://stackoverflow.com/questions/104322/how-do-you-install-boost-on-macos
 
 Alternatively, have a look at - https://github.com/TadasBaltrusaitis/OpenFace/issues/340, https://github.com/TadasBaltrusaitis/OpenFace/issues/258
+
+## BLAS performance
+
+OpenFace uses BLAS to accelerate numerical computations and TBB for parallelization, in some cases the threading of BLAS and TBB clash, adding the below environmental variables helps with this issue:
+
+`export OMP_NUM_THREADS=1`
+
+`export VECLIB_MAXIMUM_THREADS=1`
 
 ## Tweaks
 
