@@ -44,7 +44,35 @@ The system is capable of performing a number of facial analysis tasks:
 
 [Mac](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Mac-Installation)
 
-[Docker image](https://hub.docker.com/r/benbuleong/openface-cambridge/) Somewhat outdated version, but easy to use as no installation needed
+### Quickstart usage of OpenFace with Docker (thanks Edgar Aroutiounian)
+
+Do:
+
+```
+$ docker run -it --rm algebr/openface:latest
+```
+
+And this will open up a shell in a prebuilt OpenFace project.
+
+Then find its container ID:
+
+```
+$ docker ps
+CONTAINER ID        IMAGE                    COMMAND             CREATED              STATUS              PORTS               NAMES
+3a73fbce562e        algebr/openface:latest   "/bin/bash"         About a minute ago   Up About a minute                       musing_wiles
+```
+
+Then you can copy an image to the running container:
+
+```
+$ docker cp samples/sample1.jpg 3a73fbce562e:/home/openface-build
+```
+
+And in the first shell you can test it out:
+
+```
+$ build/bin/FaceLandmarkImg -f sample1.jpg
+```
 
 ## Use
 
