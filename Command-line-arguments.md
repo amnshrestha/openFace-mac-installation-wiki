@@ -185,7 +185,7 @@ By default the executable will output all features (tracked videos, HOG files, s
 
    `-wild` flag specifies when the images are more difficult, model considers extended search regions
 
-   `-multi-view <0/1>` should multi-view initialisation be used (more robust, but slower), off by default
+   `-multi_view <0/1>` should multi-view initialisation be used (more robust, but slower), off by default
 
 **Optional camera parameters for proper head pose and eye gaze computation**
 
