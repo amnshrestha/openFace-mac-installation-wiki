@@ -170,13 +170,13 @@ To acquire all of the dependencies follow the instructions pertaining to your Op
 
 3. Compile the code using instructions pertaining to your operating system:
 
-    * Ubuntu 14.04
+    * GCC compiler
 
         `cmake -D CMAKE_BUILD_TYPE=RELEASE .. `
 
         `make`
 
-    * Ubuntu 15.10
+    * Clang compiler
 
         `cmake -D CMAKE_CXX_COMPILER=clang++ -D CMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++ -I/usr/include/libcxxabi" -D CMAKE_EXE_LINKER_FLAGS="-std=c++11 -stdlib=libc++ -lc++abi" -D CMAKE_BUILD_TYPE=RELEASE ..`
 
