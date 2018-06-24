@@ -16,7 +16,7 @@ For Windows this software comes prepackaged with all the necessary binaries and 
 
 ### Model download
 
-For CE-CLM landmark detector to work you need to download additional model files, this can be done by executing the `download_models.ps1` PowerShell script. For more details on model download see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
+For CE-CLM landmark detector to work you need to download additional model files, this can be done by executing the `download_models.ps1` PowerShell script. For more details on model download see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-download
 
 
 ### Release Mode
