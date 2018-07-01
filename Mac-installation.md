@@ -43,3 +43,10 @@ and you should have binaries in the `bin` directory. e.g. you can run:
 
     build/bin/FaceLandmarkVid -device 0
 
+## BLAS performance
+
+OpenFace uses BLAS to accelerate numerical computations and TBB for parallelization, in some cases the threading of BLAS and TBB clash, adding the below environmental variables helps with this issue:
+
+`export OMP_NUM_THREADS=1`
+
+`export VECLIB_MAXIMUM_THREADS=1`
