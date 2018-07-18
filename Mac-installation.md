@@ -56,4 +56,4 @@ You can add the below environmental variables (run in the shell just before runn
     export VECLIB_MAXIMUM_THREADS=1
 
 You can reinstall OpenBLAS with openmp:
-    brew reinstall openblas —with openmp
+    `brew reinstall openblas —with openmp`
