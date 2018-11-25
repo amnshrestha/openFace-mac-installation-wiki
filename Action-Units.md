@@ -42,7 +42,7 @@ However, some video sequences do not have much dynamic range - the same expressi
 
 ## Training AU models
 
-The code for training AU prediction models is available [here](https://github.com/TadasBaltrusaitis/OpenFace/tree/master/matlab_version/AU_training), it also includes a readme explaining how to go around with training the models.
+The code for training AU prediction models is available [here](https://github.com/TadasBaltrusaitis/OpenFace/tree/master/model_training/AU_training), it also includes a readme explaining how to go around with training the models.
 
 ## Datasets used for training AUs in OpenFace
 
