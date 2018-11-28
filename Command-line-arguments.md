@@ -106,7 +106,6 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 
    `-oc <FOURCC_CODE>` the codec of the output video file (list of FOURCC codes can be found here - https://www.fourcc.org/codecs.php)
  
- 
 **Additional parameters for output (applicable for both FaceLandmarkImg and FeatureExtraction)**
 	
    `-verbose` visualise the processing steps live: tracked face with gaze, action units, similarity aligned face, and HOG features (not visualized by default), this flag turns all of them on, below flags allow for more fine-grained control. Visualizing these outputs will reduce processing speeds, potentially by a significant amount.
@@ -119,12 +118,14 @@ For more details on output format see [here](https://github.com/TadasBaltrusaiti
 
    `-vis-aus` visualise Action Units
 
-   `-q` supress any live visualisation (this supresses all the other visualization flags)
-
    `-simscale <float>` scale of the face for similarity alignment (default 0.7)
 
    `-simsize <int>` width and height of image in pixels when similarity aligned (default 112)
-   
+ 
+   `-format_aligned <format>` output image format for aligned faces (e.g. png or jpg), any format supported by OpenCV
+
+   `-format_vis_image <format>` output image format for visualized images (e.g. png or jpg), any format supported by OpenCV. Only applicable to `FaceLandmarkImg` 
+  
    `-nomask` forces the aligned face output images to not be masked out
 
    `-g` output images should be grayscale (for saving space)
