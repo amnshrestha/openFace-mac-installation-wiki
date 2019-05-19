@@ -67,16 +67,16 @@ If you already have any of the following dependencies you can skip those steps
 
 6. Download and compile dlib:
 
-    wget http://dlib.net/files/dlib-19.13.tar.bz2;
-    tar xf dlib-19.13.tar.bz2;
-    cd dlib-19.13;
-    mkdir build;
-    cd build;
-    cmake ..;
-    cmake --build . --config Release;
-    sudo make install;
-    sudo ldconfig;
-    cd ../..;    
+        wget http://dlib.net/files/dlib-19.13.tar.bz2
+        tar xf dlib-19.13.tar.bz2
+        cd dlib-19.13
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build . --config Release
+        sudo make install
+        sudo ldconfig
+        cd ../..
 	
 ## Actual OpenFace installation
 
