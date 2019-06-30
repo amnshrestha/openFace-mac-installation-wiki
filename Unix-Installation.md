@@ -4,19 +4,15 @@ On most systems you can install OpenFace using the `download_models.sh` followed
 
 For more details on model downloads see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
 
-# Advanced Ubuntu installation
+# Advanced Ubuntu installation (in case ./install.sh fails)
 
 For Unix based systems and different compilers, I included Cmake files for cross-platform and cross-IDE support.
 
-This code has been tested on Ubuntu 14.04, 16.04, and 18.04 with GCC
+This code has been tested on Ubuntu 14.04, 16.04, and 18.04 with a C++17 GCC compiler (clang should also work, but was not tested extensively)
 
 ## Dependency installation
 
-OpenFace requires cmake, OpenCV 3.1.0 (or newer), tbb, OpenBLAS, dlib and boost.
-
-To acquire all of the dependencies follow the instructions pertaining to your compiler:
-
-### Ubuntu gcc compiler instructions
+OpenFace requires cmake, OpenCV 4.0.0 (or newer), OpenBLAS, dlib, C++17 compiler (tbb and boost are optional additional dependencies that will be used if present).
 
 If you already have any of the following dependencies you can skip those steps
 
@@ -25,6 +21,8 @@ If you already have any of the following dependencies you can skip those steps
     `sudo apt-get update`
 
     `sudo apt-get install build-essential`
+	
+	`sudo apt-get install g++-8`
 
 2. Cmake:
 
@@ -34,7 +32,7 @@ If you already have any of the following dependencies you can skip those steps
 
     `sudo apt-get install libopenblas-dev`
 
-4. Download and compile OpenCV 3.4.0
+4. Download and compile OpenCV 4.1.0
 
     4.1 Install OpenCV dependencies:
 
@@ -42,14 +40,14 @@ If you already have any of the following dependencies you can skip those steps
 
         sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
 
-    4.2 Download OpenCV 3.4.0 from https://github.com/opencv/opencv/archive/3.4.0.zip
+    4.2 Download OpenCV 4.1.0 from https://github.com/opencv/opencv/archive/4.1.0.zip
 
-        wget https://github.com/opencv/opencv/archive/3.4.0.zip
+        wget https://github.com/opencv/opencv/archive/4.1.0.zip
 
     4.3 Unzip it and create a build folder:
 
-        sudo unzip 3.4.0.zip
-        cd opencv-3.4.0
+        sudo unzip 4.1.0.zip
+        cd opencv-4.1.0
         mkdir build
         cd build
 
@@ -61,11 +59,7 @@ If you already have any of the following dependencies you can skip those steps
 
 	`sudo make install`
 
-5. Get Boost:
-
-    `sudo apt-get install libboost-all-dev`
-
-6. Download and compile dlib:
+5. Download and compile dlib:
 
     wget http://dlib.net/files/dlib-19.13.tar.bz2;
     tar xf dlib-19.13.tar.bz2;
@@ -77,6 +71,11 @@ If you already have any of the following dependencies you can skip those steps
     sudo make install;
     sudo ldconfig;
     cd ../..;    
+
+6. Get Boost (optional):
+
+    `sudo apt-get install libboost-all-dev`
+
 	
 ## Actual OpenFace installation
 
@@ -92,10 +91,8 @@ If you already have any of the following dependencies you can skip those steps
 
 3. Compile the code using:
 
-    `cmake -D CMAKE_BUILD_TYPE=RELEASE CMAKE_CXX_FLAGS="-std=c++11" -D CMAKE_EXE_LINKER_FLAGS="-std=c++11" .. `
-
-	`make`
- 
+    cmake -D CMAKE_BUILD_TYPE=RELEASE ..
+    make
 
 3. Test it with
     - for videos:

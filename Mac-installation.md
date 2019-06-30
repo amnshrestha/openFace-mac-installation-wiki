@@ -12,16 +12,17 @@
 
 * Get [XQuartz](https://www.xquartz.org) (an X Window system for OS X).  You don't actually need it to *run* OpenFace, but having the X libraries and include files on your system will make OpenFace (and various other things) much easier to build.
 
-* Install *boost*, TBB, dlib, OpenBLAS, and OpenCV with:
+* Install C++17 compiler, *boost*, TBB, dlib, OpenBLAS, and OpenCV with:
 
     brew update
+    brew install gcc --HEAD
+    brew install boost
     brew install tbb
     brew install openblas
     brew install dlib
-    brew install opencv3
-    brew install boost
+    brew install opencv
 
-In addition, you may find it useful to tell CMake how to find your X Windows libraries, since they may not be in the same place as expected on Linux.  Add the following lines to CMakeLists.txt (e.g. after the similar section for Boost):
+Optional, but you may find it useful to tell CMake how to find your X Windows libraries, since they may not be in the same place as expected on Linux.  Add the following lines to CMakeLists.txt (e.g. after the similar section for OpenCV):
 
     find_package( X11 REQUIRED )
     MESSAGE("X11 information:")
@@ -36,7 +37,7 @@ After that, the build process is very similar to Linux (in OpenFace directory ex
 
     mkdir build
     cd build
-    cmake -D CMAKE_BUILD_TYPE=RELEASE CMAKE_CXX_FLAGS="-std=c++11" -D CMAKE_EXE_LINKER_FLAGS="-std=c++11" .. 
+    cmake -D CMAKE_BUILD_TYPE=RELEASE ..  
     make
 
 and you should have binaries in the `bin` directory. e.g. you can run:

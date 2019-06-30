@@ -32,7 +32,7 @@ If you want to extract facial action units from image sequence or a video you sh
 
 ### Multiple person videos
 
-If you want to extract facial action units from videos that contain multiple faces you should use `FaceLandmarkVidMulti` project. NOTE that the extracted AUs will not be as reliable as in the single person in the video case, due to person specific feature calibration and post-processing which is currently not supported in multi-face case.
+If you want to extract facial action units from videos that contain multiple faces you should use `FaceLandmarkVidMulti` project. *NOTE* that the extracted AUs will not be as reliable as in the single person in the video case, due to person specific feature calibration and post-processing which is currently not supported in multi-face case.
 
 ### Static vs dynamic
 
