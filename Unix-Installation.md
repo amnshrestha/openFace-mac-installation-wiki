@@ -1,10 +1,10 @@
 # Install script 
 
-On most systems you can install OpenFace using the `download_models.sh` followed by `./install.sh` script, if that does not work or you already have a number of dependencies installed and want to link to them use the following steps.
+On most systems you can install OpenFace using the `bash ./download_models.sh` followed by `sudo bash ./install.sh` script. This is recommended if you are not as familiar with compiling C++ code or installing libraries. However, this is not recommended if you already have a number of dependencies installed (see below) and want to link to them instead of getting another version. See below steps 
 
 For more details on model downloads see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
 
-# Advanced Ubuntu installation (in case ./install.sh fails)
+# Advanced Ubuntu installation (if not using ./install.sh, or if it fails)
 
 For Unix based systems and different compilers, I included Cmake files for cross-platform and cross-IDE support.
 
@@ -53,7 +53,7 @@ If you already have any of the following dependencies you can skip those steps
 
     4.4 Build it using:
 
-        cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_SHARED_LIBS=OFF ..
+        cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_TIFF=ON -D WITH_TBB=ON -D BUILD_SHARED_LIBS=OFF ..
 
 	`make -j2`
 
@@ -75,7 +75,6 @@ If you already have any of the following dependencies you can skip those steps
 6. Get Boost (optional):
 
     `sudo apt-get install libboost-all-dev`
-
 	
 ## Actual OpenFace installation
 

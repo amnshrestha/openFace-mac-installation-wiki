@@ -3,6 +3,7 @@ A number of publicly available datasets have been used to train and evaluate the
 ## Datasets used for training and evaluating facial landmarks
 - [CMU Multi-PIE](http://www.cs.cmu.edu/afs/cs/project/PIE/MultiPie/Multi-Pie/Home.html)
 - [300W](https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/), we used the HELEN and LFPW training subsets for training and the rest for testing
+- [Menpo](https://ibug.doc.ic.ac.uk/resources/2nd-facial-landmark-tracking-competition-menpo-ben/). we used the Menpo challenge dataset for training and evaluating CEN patch experts
 
 ## Datasets used for training AUs in OpenFace
 

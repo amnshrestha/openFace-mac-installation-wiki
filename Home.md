@@ -1,4 +1,4 @@
-# OpenFace 2.0.3: a facial behavior analysis toolkit
+# OpenFace 2.1.0: a facial behavior analysis toolkit
 
 Over the past few years, there has been an increased interest in automatic facial behavior analysis and understanding. We present OpenFace – a tool intended for computer vision and machine learning researchers, affective computing community and people interested in building interactive applications based on facial behavior analysis. OpenFace is the ﬁrst toolkit capable of facial landmark detection, head pose estimation, facial action unit recognition, and eye-gaze estimation with available source code for both running and training the models. The computer vision algorithms which represent the core of OpenFace demonstrate state-of-the-art results in all of the above mentioned tasks. Furthermore, our tool is capable of real-time performance and is able to run from a simple webcam without any specialist hardware.
 

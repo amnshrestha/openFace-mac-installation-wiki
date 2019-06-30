@@ -44,3 +44,18 @@ and you should have binaries in the `bin` directory. e.g. you can run:
 
     build/bin/FaceLandmarkVid -device 0
 
+## OpenBLAS performance
+
+OpenFace uses OpenBLAS to accelerate numerical computations and TBB for parallelization, in some cases the threading of OpenBLAS and TBB clash. This can lead to the following error:
+`OpenBLAS : Program will terminate because you tried to start too many threads.`
+
+To fix it and to potentially improve OpenFace performance:
+
+You can add the below environmental variables (run in the shell just before running any of the OpenFace executables):
+
+    export OMP_NUM_THREADS=1
+    export VECLIB_MAXIMUM_THREADS=1
+
+You can reinstall OpenBLAS with openmp:
+
+    brew reinstall openblas —with openmp

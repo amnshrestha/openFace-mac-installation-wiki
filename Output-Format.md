@@ -34,17 +34,17 @@ The header specifies the meaning of each column. The explanation of each:
 
 `gaze_1_x, gaze_1_y, gaze_1_z` Eye gaze direction vector in world coordinates for eye 1 (normalized), eye 1 is the rightmost eye in the image (think of it as a ray going from the right eye in the image in the direction of the eye gaze)
 
-`gaze_angle_x, gaze_angle_y` Eye gaze direction in radians in world coordinates averaged for both eyes and converted into more easy to use format than gaze vectors. If a person is looking left-right this will results in the change of gaze_angle_x and, if a person is looking up-down this will result in change of gaze_angle_y, if a person is looking straight ahead both of the angles will be close to 0 (within measurement error)
+`gaze_angle_x, gaze_angle_y` Eye gaze direction in radians in world coordinates averaged for both eyes and converted into more easy to use format than gaze vectors. If a person is looking left-right this will results in the change of gaze_angle_x (from positive to negative) and, if a person is looking up-down this will result in change of gaze_angle_y (from negative to positive), if a person is looking straight ahead both of the angles will be close to 0 (within measurement error). 
 
 `eye_lmk_x_0, eye_lmk_x_1,... eye_lmk_x55, eye_lmk_y_1,... eye_lmk_y_55` location of 2D eye region landmarks in pixels. The landmark index can be found below
 
-`eye_lmk_X_0, eye_lmk_X_1,... eye_lmk_X55, eye_lmk_Y_0,... eye_lmk_Z_55` location of 3D eye region landmarks in pixels. The landmark index can be found below
+`eye_lmk_X_0, eye_lmk_X_1,... eye_lmk_X55, eye_lmk_Y_0,... eye_lmk_Z_55` location of 3D eye region landmarks in millimeters. The landmark index can be found below
 
 ![Eye landmark markup](https://raw.githubusercontent.com/wiki/TadasBaltrusaitis/OpenFace/images/eye_lmk_markup.png)
 
 **Pose**
 
-`pose_Tx, pose_Ty, pose_Tz` the location of the head with respect to camera in millimetre (positive Z is away from the camera)
+`pose_Tx, pose_Ty, pose_Tz` the location of the head with respect to camera in millimeters (positive Z is away from the camera)
 
 `pose_Rx, pose_Ry, pose_Rz` Rotation is in radians around X,Y,Z axes with the convention `R = Rx * Ry * Rz`, left-handed positive sign. This can be seen as pitch (Rx), yaw (Ry), and roll (Rz). The rotation is in world coordinates with camera being the origin.
 
