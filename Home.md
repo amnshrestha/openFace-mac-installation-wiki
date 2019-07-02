@@ -4,11 +4,7 @@ Over the past few years, there has been an increased interest in automatic facia
 
 ![Multicomp logo](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/muticomp_logo_black.png)
 
-![Rainbow logo](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/rainbow-logo.gif)
-
-OpenFace is an implementation of a number of research papers from the Multicomp group, Language Technologies Institute at the Carnegie Mellon University and Rainbow Group, Computer Laboratory, University of Cambridge. The founder of the project and main developer is Tadas Baltrušaitis.
-
-Special thanks goes to Louis-Philippe Morency and his MultiComp Lab at Carnegie Mellon University for help in writing and testing the code, Erroll Wood for the gaze estimation work, and Amir Zadeh and Yao Chong Lim on work on the CE-CLM model.
+OpenFace was originally developed by Tadas Baltrušaitis in collaboration with CMU MultiComp Lab led by Prof. Louis-Philippe Morency. Some of the original algorithms were created while at Rainbow Group, Cambridge University. The OpenFace library is still actively developed at the CMU MultiComp Lab in collaboration with Tadas Baltršsaitis. Special thanks to researcher who helped developing, implementing and testing the algorithms present in Openface: Amir Zadeh and Yao Chong Lim on work on the CE-CLM model and Erroll Wood for the gaze estimation work.
 
 ## Functionality
 
