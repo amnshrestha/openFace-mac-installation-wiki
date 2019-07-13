@@ -18,13 +18,11 @@ If you already have any of the following dependencies you can skip those steps
 
 1. Get newest GCC, done using:
 
-    `sudo apt-get update`
+        sudo apt-get update
+        sudo apt-get install build-essential
+        sudo apt-get install g++-8
 
-    `sudo apt-get install build-essential`
-	
-	`sudo apt-get install g++-8`
-
-    *Node if on Ubuntu 16.04 or lower*, you will need the following lines before installing newest g++:
+    *Note if on Ubuntu 16.04 or lower*, you will need the following lines before installing newest g++:
 
         sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         sudo apt-get -y update
@@ -81,16 +79,16 @@ If you already have any of the following dependencies you can skip those steps
 
 5. Download and compile dlib:
 
-    wget http://dlib.net/files/dlib-19.13.tar.bz2;
-    tar xf dlib-19.13.tar.bz2;
-    cd dlib-19.13;
-    mkdir build;
-    cd build;
-    cmake ..;
-    cmake --build . --config Release;
-    sudo make install;
-    sudo ldconfig;
-    cd ../..;    
+        wget http://dlib.net/files/dlib-19.13.tar.bz2;
+        tar xf dlib-19.13.tar.bz2;
+        cd dlib-19.13;
+        mkdir build;
+        cd build;
+        cmake ..;
+        cmake --build . --config Release;
+        sudo make install;
+        sudo ldconfig;
+        cd ../..;    
 
 6. Get Boost (optional):
 
@@ -104,14 +102,14 @@ If you already have any of the following dependencies you can skip those steps
 
 2. Create an out-of-source build directory to store the compiled artifacts:
 
-    cd OpenFace
-    mkdir build
-    cd build
+        cd OpenFace
+        mkdir build
+        cd build
 
 3. Compile the code using (if using g++ version 8, change to clang or other version appropriately):
 
-    cmake -D CMAKE_CXX_COMPILER=g++-8 -D CMAKE_C_COMPILER=gcc-8 -D CMAKE_BUILD_TYPE=RELEASE ..
-    make
+        cmake -D CMAKE_CXX_COMPILER=g++-8 -D CMAKE_C_COMPILER=gcc-8 -D CMAKE_BUILD_TYPE=RELEASE ..
+        make
 
 3. Test it with
     - for videos:
