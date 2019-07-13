@@ -1,14 +1,10 @@
-# OpenFace 2.1.0: a facial behavior analysis toolkit
+# OpenFace 2.2.0: a facial behavior analysis toolkit
 
 Over the past few years, there has been an increased interest in automatic facial behavior analysis and understanding. We present OpenFace – a tool intended for computer vision and machine learning researchers, affective computing community and people interested in building interactive applications based on facial behavior analysis. OpenFace is the ﬁrst toolkit capable of facial landmark detection, head pose estimation, facial action unit recognition, and eye-gaze estimation with available source code for both running and training the models. The computer vision algorithms which represent the core of OpenFace demonstrate state-of-the-art results in all of the above mentioned tasks. Furthermore, our tool is capable of real-time performance and is able to run from a simple webcam without any specialist hardware.
 
 ![Multicomp logo](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/muticomp_logo_black.png)
 
-![Rainbow logo](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/imgs/rainbow-logo.gif)
-
-OpenFace is an implementation of a number of research papers from the Multicomp group, Language Technologies Institute at the Carnegie Mellon University and Rainbow Group, Computer Laboratory, University of Cambridge. The founder of the project and main developer is Tadas Baltrušaitis.
-
-Special thanks goes to Louis-Philippe Morency and his MultiComp Lab at Carnegie Mellon University for help in writing and testing the code, Erroll Wood for the gaze estimation work, and Amir Zadeh and Yao Chong Lim on work on the CE-CLM model.
+OpenFace was originally developed by Tadas Baltrušaitis in collaboration with CMU MultiComp Lab led by Prof. Louis-Philippe Morency. Some of the original algorithms were created while at Rainbow Group, Cambridge University. The OpenFace library is still actively developed at the CMU MultiComp Lab in collaboration with Tadas Baltršaitis. Special thanks to researcher who helped developing, implementing and testing the algorithms present in OpenFace: Amir Zadeh and Yao Chong Lim on work on the CE-CLM model and Erroll Wood for the gaze estimation work.
 
 ## Functionality
 
@@ -44,7 +40,7 @@ The system is capable of performing a number of facial analysis tasks:
 
 [Mac](https://github.com/TadasBaltrusaitis/OpenFace/wiki/Mac-Installation)
 
-### Quickstart usage of OpenFace with Docker (thanks Edgar Aroutiounian)
+### Quickstart usage of OpenFace with Docker (thanks Edgar Aroutiounian and Mike McDermott)
 
 Do:
 

@@ -168,8 +168,6 @@ By default the executable will output all features (tracked videos, HOG files, s
    
 ## Common parameters for all
 
-    -q specifying to use quiet mode not visualizing output (useful for running on servers)
-
 **Model to use parameters**
 
     -mloc <the location of landmark detection models>
