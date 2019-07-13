@@ -24,10 +24,32 @@ If you already have any of the following dependencies you can skip those steps
 	
 	`sudo apt-get install g++-8`
 
+    *Node if on Ubuntu 16.04 or lower*, you will need the following lines before installing newest g++:
+
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        sudo apt-get -y update
+
+	
 2. Cmake:
 
     `sudo apt-get install cmake`
 
+	*Note if on Ubuntu 16.04 or lower*, CMake version required by OpenFace is at least 3.8 and Ubuntu 16.04 apt-get only support up to CMake 3.5, to install a newer version of CMake follow:
+
+        sudo apt-get --purge remove cmake-qt-gui -y
+        sudo apt-get --purge remove cmake -y
+        mkdir -p cmake_tmp
+        cd cmake_tmp
+        wget https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
+        tar -xzvf cmake-3.10.1.tar.gz -qq
+        cd cmake-3.10.1/
+        ./bootstrap
+        make -j4
+        sudo make install
+        cd ../..
+        sudo rm -rf cmake_tmp
+
+	
 3. Get OpenBLAS
 
     `sudo apt-get install libopenblas-dev`
@@ -54,10 +76,8 @@ If you already have any of the following dependencies you can skip those steps
     4.4 Build it using:
 
         cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_TIFF=ON -D WITH_TBB=ON -D BUILD_SHARED_LIBS=OFF ..
-
-	`make -j2`
-
-	`sudo make install`
+	    make -j2
+        sudo make install
 
 5. Download and compile dlib:
 
@@ -88,9 +108,9 @@ If you already have any of the following dependencies you can skip those steps
     mkdir build
     cd build
 
-3. Compile the code using:
+3. Compile the code using (if using g++ version 8, change to clang or other version appropriately):
 
-    cmake -D CMAKE_BUILD_TYPE=RELEASE ..
+    cmake -D CMAKE_CXX_COMPILER=g++-8 -D CMAKE_C_COMPILER=gcc-8 -D CMAKE_BUILD_TYPE=RELEASE ..
     make
 
 3. Test it with
