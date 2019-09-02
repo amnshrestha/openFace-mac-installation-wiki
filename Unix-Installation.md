@@ -142,3 +142,17 @@ When Anaconda is installed, somehow OpenCV finds the outdated GCC 4.x instead of
 This results in OpenFace giving the error:
 usr/lib/x86_64-linux-gnu/libsoxr.so.0: undefined reference to `GOMP_parallel@GOMP_4.0'
 collect2: error: ld returned 1 exit status
+
+## OpenBLAS
+
+OpenFace uses OpenBLAS to accelerate numerical computations and TBB for parallelization, in some cases the threading of OpenBLAS and TBB clash. This can lead to the following error:
+`OpenBLAS : Program will terminate because you tried to start too many threads.`
+
+To fix it and to potentially improve OpenFace performance:
+
+You can add the below environmental variables (run in the shell just before running any of the OpenFace executables):
+
+    export OMP_NUM_THREADS=1
+    export VECLIB_MAXIMUM_THREADS=1
+
+Also see this thread: https://github.com/TadasBaltrusaitis/OpenFace/issues/748
