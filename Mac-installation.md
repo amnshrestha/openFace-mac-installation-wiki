@@ -59,3 +59,5 @@ You can add the below environmental variables (run in the shell just before runn
 You can reinstall OpenBLAS with openmp:
 
     brew reinstall openblas —with openmp
+
+Also see this thread: https://github.com/TadasBaltrusaitis/OpenFace/issues/748
