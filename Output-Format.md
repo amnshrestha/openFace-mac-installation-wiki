@@ -64,7 +64,7 @@ Where the landmarks are no longer in pixel values but in millimetres and we also
 
 **Rigid and non-rigid shape parameters**
 
-Parameters of a point distribution model (PDM) that describe the rigid face shape (location, scale and rotation) and non-rigid face shape (deformation due to expression and identity). For more details look at chapter 4.2 of my [Thesis](https://www.cl.cam.ac.uk/~tb346/pub/thesis/phd_thesis.pdf) for more details.
+Parameters of a point distribution model (PDM) that describe the rigid face shape (location, scale and rotation) and non-rigid face shape (deformation due to expression and identity). For more details look at chapter 4.2 of my [Thesis](https://www.dropbox.com/s/vuvwxadjquxi16o/ThesisFinal.pdf?dl=0) for more details.
 
 `p_scale, p_rx, p_ry, p_rz, p_tx, p_ty` - scale, rotation and translation terms of the PDM
 
