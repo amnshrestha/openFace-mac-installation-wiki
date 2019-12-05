@@ -156,3 +156,7 @@ You can add the below environmental variables (run in the shell just before runn
     export VECLIB_MAXIMUM_THREADS=1
 
 Also see this thread: https://github.com/TadasBaltrusaitis/OpenFace/issues/748
+
+## Building on ARM
+
+Some people have managed to build OpenFace on ARM machines - https://github.com/TadasBaltrusaitis/OpenFace/issues/714
