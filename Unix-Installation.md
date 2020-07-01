@@ -73,8 +73,8 @@ If you already have any of the following dependencies you can skip those steps
 
     4.4 Build it using:
 
-        cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_TIFF=ON -D WITH_TBB=ON ..
-        make -j2
+        sudo cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_TIFF=ON -D WITH_TBB=ON ..
+        sudo make -j2
         sudo make install
 
 5. Download and compile dlib:
