@@ -17,7 +17,8 @@
         brew install wget
         brew install opencv
 
-- The landmark detection model is not included due to file size, you can download it using the bash `download_models.sh` script. For more details see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
+- The landmark detection model is not included due to file size, you can download it using the bash `download_models.sh` script. You might need to give it access by doing `chmod +x download_models.sh` then do `./download_models.sh`
+For more details see - https://github.com/TadasBaltrusaitis/OpenFace/wiki/Model-acquisition
 
 - You'll want the [Command Line Tools for Xcode](https://developer.apple.com/downloads/). If you can't use these for any reason, you can build `gcc` using Homebrew -- in fact, it will happen automatically -- but it'll be much slower.
 
@@ -41,9 +42,29 @@ After that, the build process is very similar to Linux (in OpenFace directory ex
     cmake -D CMAKE_BUILD_TYPE=RELEASE ..  
     make
 
-and you should have binaries in the `bin` directory. e.g. you can run:
+If running `make` gave a list of undefined errors, this could be a problem with XCode. Please use the suggestion by awandzel [here](https://github.com/TadasBaltrusaitis/OpenFace/issues/776#issuecomment-666900508). Please make sure you're in the root directory and not a user directory when you try to access the cmath file. You might need sudo access for this. This should now let you run `make`.
+
+Now, you should have binaries in the `bin` directory. 
+Make sure you have opened `XQuartz` from your applications and then you can run: 
+
+e.g.
 
     build/bin/FaceLandmarkVid -device 0
+
+If this gives the following error: 
+    
+    Could not find the HAAR face detector location
+
+Then, first make sure you've ran `download_models.sh` as mentioned above. Then, copy the contents of `lib/local/LandmarkDetector/model/patch_experts`
+to 
+`build/bin/model`. Now, it should have access to this files.
+
+If you come the following error:
+
+    OpenCV: not authorized to capture video
+
+Then, follow the answer provided [here](https://apple.stackexchange.com/questions/360851/add-access-to-the-macbook-camera-for-the-terminal-application?fbclid=IwAR2tL2NbFB8UXFr9Arp7htzsbYjgFxJ7u7wAc0nEDSePugqFFc2nM0HB0jc). This will prompt the terminal to ask for access to the camera at which point, you can grant the access. 
+
 
 ## OpenBLAS performance
 
